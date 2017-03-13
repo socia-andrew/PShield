@@ -1,0 +1,106 @@
+<resources>
+
+    <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">
+
+    </style>
+
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+    <!--&lt;!&ndash; colorPrimary is used for the default action bar background &ndash;&gt;-->
+    <!--<item name="colorPrimary">@color/primary</item>-->
+    <!--&lt;!&ndash; colorPrimaryDark is used for the status bar &ndash;&gt;-->
+    <!--<item name="colorPrimaryDark">@color/primary_dark</item>-->
+    <!--&lt;!&ndash; colorAccent is used as the default value for colorControlActivated which is used to tint widgets &ndash;&gt;-->
+    <!--<item name="colorAccent">@color/accent</item>-->
+    <!--<item name="colorControlNormal">@color/primary</item>-->
+    <!--</style>-->
+
+    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/textColor</item>
+        <item name="android:alertDialogTheme">@style/AppCompatAlertDialogStyle</item>
+        <!-- For the resting Spinner style -->
+        <item name="android:spinnerItemStyle">
+            @style/spinnerItemStyle
+        </item>
+
+        <!-- For each individual Spinner list item once clicked on -->
+        <item name="android:spinnerDropDownItemStyle">
+            @style/spinnerDropDownItemStyle
+        </item>
+
+    </style>
+
+    <style name="MyMaterialTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="MyMaterialTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AlertDialogCustomTheme" parent="android:Theme.Dialog">
+        <!--<item name="android:textColor">#666666</item>-->
+        <!--<item name="colorAccent">#666666</item>-->
+        <!--<item name="android:textColorPrimary">#666666</item>-->
+        <!--<item name="android:background">#5fa3d0</item>-->
+
+
+        <!--THE FOLLOWING ITEMS HAVE NOT EFFECT ... !! -->
+
+    </style>
+
+    <!--<style name="cust_dialog" parent="@android:style/Theme.Dialog">-->
+    <!--<item name="android:windowTitleStyle">@style/dialog_title_style</item>-->
+    <!--</style>-->
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#666666</item>
+        <item name="android:textColorPrimary">#2F63CD</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:windowTitleStyle">@style/TitleDialogTextStyle</item>
+    </style>
+
+    <style name="TitleDialogTextStyle" parent="Base.DialogWindowTitle.AppCompat">
+        <item name="android:textColor">#666666</item>
+        <item name="colorAccent">#666666</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:background">#5fa3d0</item>
+    </style>
+
+    <!--<style name="dialog_title_style" parent="android:Widget.TextView">-->
+    <!--<item name="android:background">#2F63CD</item>-->
+    <!--<item name="android:padding">10dp</item>-->
+    <!--</style>-->
+
+    <style name="spinnerItemStyle">
+        <item name="android:background">@drawable/spinner_bg</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="spinnerDropDownItemStyle">
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+
+    <style name="spinner_style">
+        <item name="android:background">@drawable/spinner_bg</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="spin_header">
+        <item name="android:background">@drawable/spinner_header</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">28dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+
+</resources>

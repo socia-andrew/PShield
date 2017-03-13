@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_transfer_success"
+    tools:context="com.budgetload.materialdesign.activity.TransferSuccess">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EAE8F3"
+        android:padding="20dp"
+        tools:context="com.payvenue.budgetloadv2.TopUpConfirmation" >
+
+        <RelativeLayout
+            android:id="@+id/wrapper"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" >
+
+            <TextView
+                android:id="@+id/mobileno"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/amountval"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textSize="18dp"
+                android:text="09312312321"
+                android:textColor="#8C9097" />
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/mobileno"
+                android:layout_span="2"
+                android:background="#2EB75A" >
+
+                <Button
+                    android:id="@+id/stocktransferagain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#2EB75A"
+                    android:gravity="center"
+                    android:text="TRANSFER"
+                    android:textColor="#ffffff"
+                    android:textSize="13dp" />
+
+                <Button
+                    android:id="@+id/gotransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#2EB75A"
+                    android:gravity="center"
+                    android:text="GO TO TRANSACTIONS"
+                    android:textColor="#ffffff"
+                    android:textSize="13dp" />
+            </TableRow>
+
+            <TextView
+                android:id="@+id/amountval"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/prodwrap"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="P 500.00"
+                android:textColor="#2B60D0"
+                android:textSize="25dp" />
+
+            <TableRow
+                android:id="@+id/checkwrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="32dp"
+                android:background="#ffffff"
+                android:padding="10dp" >
+
+                <ImageView
+                    android:id="@+id/check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:gravity="right"
+                    android:src="@drawable/checkgreen"
+                    android:textColor="#2B60D0"
+                    android:textSize="20dp" />
+
+
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/checkwrap"
+                android:background="#ffffff"
+                >
+
+                <TextView
+                    android:id="@+id/successresult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:text="Stock Transfer was successful."
+                    android:textColor="#28A951"
+                    android:textSize="18dp"
+                    android:paddingBottom="10dp"
+                    />
+
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/prodwrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/TableRow01"
+                android:layout_marginTop="1dp"
+                android:background="#ffffff"
+                android:padding="10dp" >
+
+                <!-- <TextView
+                    android:id="@+id/productcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:gravity="left"
+                    android:text="Daylite Call and Text Unlimited 100"
+                    android:textColor="#2B60D0"
+                    android:textSize="20dp" /> -->
+            </TableRow>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/wrapper"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/wrapper"
+            android:background="@drawable/resibotop" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

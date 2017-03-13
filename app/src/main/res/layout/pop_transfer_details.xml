@@ -1,0 +1,494 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.payvenue.budgetloadv2.TransactionTopUpDetails">
+
+    <TableRow
+        android:id="@+id/row6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_span="2"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/txnstatlbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="155dp"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingRight="18dp"
+            android:text="Status:"
+            android:textColor="#9A9A9A" />
+
+        <TextView
+            android:id="@+id/txnstatval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="SUCCESS"
+            android:textColor="#006DD9" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/row6"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_span="2"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/datelbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="155dp"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingRight="18dp"
+            android:text="Date/Time:"
+            android:textColor="#9A9A9A" />
+
+        <TextView
+            android:id="@+id/detailsdatehour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:paddingRight="15dp"
+            android:text="jan 2015"
+            android:textColor="#006DD9" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/row1"
+        android:layout_marginTop="5dp"
+        android:layout_span="2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/senderlbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="155dp"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingRight="18dp"
+            android:text="Sender:"
+            android:textColor="#9A9A9A" />
+
+        <TextView
+            android:id="@+id/senderval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:paddingRight="15dp"
+            android:text="20000.00"
+            android:textColor="#006DD9" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/row2"
+        android:layout_marginTop="5dp"
+        android:layout_span="2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/sendercomunitylbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="155dp"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingRight="18dp"
+            android:text="Sender Community:"
+            android:textColor="#9A9A9A" />
+
+        <TextView
+            android:id="@+id/sendercommunityval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:paddingRight="15dp"
+            android:text="Remitbox"
+            android:textColor="#006DD9" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/row12"
+        android:layout_marginTop="5dp"
+        android:layout_span="2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/receiverlbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="155dp"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingRight="18dp"
+            android:text="Receiver:"
+            android:textColor="#9A9A9A" />
+
+        <TextView
+            android:id="@+id/receiverval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="20000.00"
+            android:textColor="#006DD9" />
+
+    </TableRow>
+
+
+    <TableRow
+        android:id="@+id/row13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/row3"
+        android:layout_marginTop="5dp"
+        android:layout_span="2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/lblname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="155dp"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingRight="18dp"
+            android:text="Receiver Name:"
+            android:textColor="#9A9A9A" />
+
+        <TextView
+            android:id="@+id/txtreceviername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="FirstName Middle LastNmae"
+            android:textColor="#006DD9" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/row13"
+        android:layout_marginTop="5dp"
+        android:layout_span="2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/receivercomunitylbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="155dp"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingRight="18dp"
+            android:text="Receiver Community:"
+            android:textColor="#9A9A9A" />
+
+        <TextView
+            android:id="@+id/receivercommunityval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="Remitbox"
+            android:textColor="#006DD9" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/row14"
+        android:layout_marginTop="5dp"
+        android:layout_span="2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/amountlbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="155dp"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingRight="18dp"
+            android:text="Amount:"
+            android:textColor="#9A9A9A" />
+
+        <TextView
+            android:id="@+id/amountval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="P200"
+            android:textColor="#006DD9" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/row4"
+        android:layout_marginTop="5dp"
+        android:layout_span="2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/txnlbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="155dp"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingRight="18dp"
+            android:text="TxnNo:"
+            android:textColor="#9A9A9A" />
+
+        <TextView
+            android:id="@+id/txnno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="0003120"
+            android:textColor="#006DD9" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/row5"
+        android:layout_marginTop="20dp"
+        android:layout_span="2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/retprevstocklbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="155dp"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingRight="18dp"
+            android:text="Receiver Prev
+             Stocks:"
+            android:textColor="#9A9A9A" />
+
+        <TextView
+            android:id="@+id/retprevstockval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="0003120"
+            android:textColor="#006DD9" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/row7"
+        android:layout_marginTop="5dp"
+        android:layout_span="2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/retprevconsumedlbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="155dp"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingRight="18dp"
+            android:text="Receiver Prev Consumed:"
+            android:textColor="#9A9A9A" />
+
+        <TextView
+            android:id="@+id/retprevconsumedval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="0003120"
+            android:textColor="#006DD9" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/row8"
+        android:layout_marginTop="5dp"
+        android:layout_span="2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/retprevavailablelbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="155dp"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingRight="18dp"
+            android:text="Receiver Prev Available:"
+            android:textColor="#9A9A9A" />
+
+        <TextView
+            android:id="@+id/retprevavailableval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="0003120"
+            android:textColor="#006DD9" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/row9"
+        android:layout_marginTop="5dp"
+        android:layout_span="2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/preballbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="155dp"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingRight="18dp"
+            android:text="Pre Balance:"
+            android:textColor="#9A9A9A" />
+
+        <TextView
+            android:id="@+id/prebalval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="0003120"
+            android:textColor="#006DD9" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/row10"
+        android:layout_marginTop="5dp"
+        android:layout_span="2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/postballbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="155dp"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingRight="18dp"
+            android:text="Post Balance:"
+            android:textColor="#9A9A9A" />
+
+        <TextView
+            android:id="@+id/postbalval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="0003120"
+            android:textColor="#006DD9" />
+
+    </TableRow>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/row6"
+        android:layout_alignParentTop="true"
+        android:background="#2B60D0"
+        android:padding="10dp"
+        android:text="Details"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>

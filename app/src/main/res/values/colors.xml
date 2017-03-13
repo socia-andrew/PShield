@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#1D4494</color>-->
+    <!--<color name="colorPrimaryDark">#1D4494</color>-->
+    <!--<color name="textColorPrimary">#FFFFFF</color>-->
+    <!--<color name="colorAccent">#ffffff</color>-->
+    <!--<color name="colorPrimary">#66BB6A</color>-->
+    <!--<color name="colorPrimaryDark">#4CAF50</color>-->
+
+
+    <color name="windowBackground">#FFFFFF</color>
+    <!--<color name="navigationBarColor">#000000</color>-->
+
+    <!--<color name="activityColor">#E2E7F0</color>-->
+    <!--<color name="textColor">#1b1b1b</color>&lt;!&ndash;#2B60D0&ndash;&gt;-->
+    <!--<color name="white">#FFFFFF</color>-->
+    <!--<color name="moneyColor">#466298</color>-->
+    <!--<color name="hintColor">#848fa6</color>&lt;!&ndash;#696C72&ndash;&gt;-->
+
+    <!--<color name="listcolor">#2B60D0</color>-->
+    <!--<color name="lightgrey">#dddddd</color>-->
+
+    <color name="menucolor">#466298</color>
+    <color name="searchColor">#CDD7EC</color>
+    <color name="headerColor">#CDD7EC</color>
+    <color name="drawerBackground">#425274</color>
+    <color name="navigationActive">#2C3B5A</color>
+    <color name="navigationPress">#425274</color>
+    <color name="profileColor">#2B60D0</color>
+
+    <color name="colorPrimary">#1D4494</color>
+    <color name="colorPrimaryDark">#1D4494</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="colorAccent">#ffffff</color>
+
+
+    <color name="navigationBarColor">#000000</color>
+
+    <color name="activityColor">#E2E7F0</color>
+    <color name="textColor">#1b1b1b</color><!--#2B60D0-->
+    <color name="white">#FFFFFF</color>
+    <color name="moneyColor">#466298</color>
+    <color name="hintColor">#848fa6</color><!--#696C72-->
+
+    <color name="listcolor">#2B60D0</color>
+    <color name="lightgrey">#dddddd</color>
+
+
+</resources>

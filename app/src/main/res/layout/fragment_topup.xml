@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tabwrap"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="55dp"
+    tools:context="com.budgetload.materialdesign.fragment.TopUp">
+
+
+    <TextView
+        android:id="@+id/numberpending"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="@dimen/EdtPadding"
+        android:text="2 Pending Transaction/s. Drag down to refresh"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/moneyColor"
+        android:textSize="12sp"
+        android:visibility="gone"
+        android:textStyle="italic"/>
+
+
+    <LinearLayout
+        android:id="@+id/topupdata"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_below="@+id/numberpending">
+
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <ListView
+                android:id="@+id/topuptxnlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:listSelector="#4584F2">
+
+            </ListView>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/walletwrap"
+        android:background="#e2e7f0"
+        android:scrollbarSize="0dp"
+        android:scrollbars="none"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/emptydata"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <TableRow
+                android:id="@+id/tbltext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:text="You do not have any \n Top-Up Transactions."
+                    android:textColor="#697180"
+                    android:textSize="18dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tblimg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tbltext"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="50dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginRight="80dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/topupimg" />
+            </TableRow>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
+
+

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.budgetload.materialdesign.activity.Register"
+    tools:showIn="@layout/activity_register">
+
+
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/scrollView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/txtprefix"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="62dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittextbg"
+            android:ems="5"
+            android:enabled="false"
+            android:gravity="center"
+            android:inputType="number|phone"
+            android:padding="5dp"
+            android:textSize="20dp"
+            android:text="+63"
+            android:textColor="@color/textColor" />
+
+        <EditText
+            android:id="@+id/txtmobile"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="62dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittextbg"
+            android:digits="0123456789"
+            android:ems="10"
+            android:hint="Mobile No."
+            android:inputType="number|phone"
+            android:maxLength="10"
+            android:padding="5dp"
+            android:textSize="20dp"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor"
+            android:textCursorDrawable="@null">
+
+            <requestFocus />
+        </EditText>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tableRow1"
+        android:layout_span="2"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/txtreferrer"
+            android:hint="Referrer"
+            android:paddingLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittextbg"
+            android:drawableRight="@drawable/arrow"
+            android:paddingRight="10dp"
+            android:layout_gravity="center_horizontal"/>
+    </TableRow>
+
+
+
+    <Button
+        android:id="@+id/btnRegister"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_press"
+        android:text="SUBMIT"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:layout_below="@+id/tableRow2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+
+        </RelativeLayout>
+
+
+
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

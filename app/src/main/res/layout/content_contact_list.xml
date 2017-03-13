@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.budgetload.materialdesign.activity.ContactList"
+    tools:showIn="@layout/activity_contact_list">
+
+    <EditText
+        android:id="@+id/searchitem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_background"
+        android:digits="0,1,2,3,4,5,6,7,8,9,/,qwertzuiopasdfghjklyxcvbnm "
+        android:drawableRight="@android:drawable/ic_menu_search"
+        android:ems="10"
+        android:hint="Search"
+        android:imeOptions="actionDone"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:singleLine="true"
+        android:textColorHint="#FFF">
+
+        <requestFocus />
+    </EditText>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/searchitem" />
+
+</RelativeLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/wrapsplash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.budgetload.materialdesign.activity.Registration_Spash"
+    tools:showIn="@layout/activity_reg_splash">
+
+
+    <Button
+        android:id="@+id/button1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtlabel"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_reg"
+        android:padding="20dp"
+        android:text="GET STARTED"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/txtlabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtTermsAndCondition"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="By signing up, you agree to the"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/txtTermsAndCondition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:autoLink="web"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="Terms and Conditions"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:visibility="gone" />
+
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingBottom="100dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:src="@drawable/budgetloadlogo" />
+
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/poweredby"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "984420843597",
+    "project_id": "budgetload-community"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984420843597:android:19aac830f3de9c2f",
+        "android_client_info": {
+          "package_name": "com.epayvenue.budgetload"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjVR4fT31EUTiy3gqdRnOSCYmzrHIgycM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

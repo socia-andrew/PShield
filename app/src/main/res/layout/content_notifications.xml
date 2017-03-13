@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.budgetload.materialdesign.activity.Notifications"
+    tools:showIn="@layout/fragment_notifications">
+
+    <!--
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+
+    <!--<android.support.v4.widget.SwipeRefreshLayout-->
+    <!--android:id="@+id/swipe_container"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <RelativeLayout
+        android:id="@+id/rtlnotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+
+        <ListView
+            android:id="@+id/notiflist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:listSelector="#4584F2">
+
+        </ListView>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/blanknotif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <TableRow
+            android:id="@+id/tbltext1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/myimage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="88dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/newsfeed" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbltext2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tbltext1">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="You do not have any \n notifications."
+                android:textColor="#697180"
+                android:textSize="18dp" />
+
+
+        </TableRow>
+
+    </RelativeLayout>
+
+
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+
+</RelativeLayout>

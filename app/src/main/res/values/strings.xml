@@ -1,0 +1,122 @@
+<resources>
+    <string name="app_name">My BudgetLoad</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="nav_item_nofif">Notifications</string>
+    <string name="nav_item_topup">Sell Load</string>
+    <string name="nav_item_stocktransfer">Transfer Credits</string>
+    <string name="nav_item_credits">Buy Credits</string>
+    <string name="nav_item_contacts">Contacts</string>
+    <string name="nav_item_transactions">Transactions</string>
+    <string name="nav_item_promos">Promos</string>
+    <string name="nav_item_settings">Settings</string>
+    <string name="nav_item_helpcenter">Help Center</string>
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_nofif</item>
+        <item>@string/nav_item_topup</item>
+        <item>@string/nav_item_stocktransfer</item>
+        <item>@string/nav_item_credits</item>
+        <item>@string/nav_item_contacts</item>
+        <item>@string/nav_item_transactions</item>
+        <item>@string/nav_item_settings</item>
+        <!--<item>@string/nav_item_helpcenter</item>-->
+        <!--  <item>@string/nav_item_helpcenter</item>-->
+        <!--<item>@string/nav_item_credits</item>-->
+        <!-- <item>@string/nav_item_promos</item>-->
+
+    </string-array>
+
+    <string-array name="nav_drawer_icon">
+        <item>@drawable/topup</item>
+        <item>@drawable/transfer</item>
+        <item>@drawable/transfer</item>
+        <item>@drawable/transactions</item>
+        <item>@drawable/contactidicon</item>
+        <item>@drawable/promos</item>
+        <item>@drawable/searchicon</item>
+        <item>@drawable/help</item>
+    </string-array>
+
+    <string-array name="gender">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="loadtype">
+        <item>Select Type</item>
+        <item>Regular</item>
+        <item>Special</item>
+    </string-array>
+
+    <string-array name="titleticket">
+        <item>Topping Up</item>
+        <item>Transactions</item>
+        <item>Stock Transfer</item>
+        <item>Notifications</item>
+        <item>Purchasing</item>
+        <item>Profiling</item>
+        <item>Deactivating</item>
+        <item>Suggestions</item>
+        <item>Others</item>
+    </string-array>
+
+
+    <string name="title_topup">Sell Load</string>
+    <string name="title_stocktransfer">Transfer Credits</string>
+    <string name="title_contacts">Contacts</string>
+    <string name="title_transaction">Transaction</string>
+    <string name="title_promos">Promos</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_help">Help Center</string>
+    <string name="title_activity_stock_transfer">Transfer Credits</string>
+    <string name="title_activity_contacts">Contacts</string>
+    <string name="title_activity_transactions">Transactions</string>
+    <string name="title_activity_topup">topup</string>
+    <string name="title_activity_top_up">Sell Load</string>
+    <string name="title_activity_purchase">Purchase</string>
+    <string name="title_activity_transfer">Transfer Credits</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_register">Register</string>
+    <string name="title_activity_registration__spash">Registration</string>
+    <string name="title_activity_verify">Verify</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_spash">Spash</string>
+    <string name="title_activity_promo">Promo</string>
+    <string name="title_activity_help_center">HelpCenter</string>
+    <string name="title_activity_top_up_load">Top-Up</string>
+    <string name="title_activity_product">Product</string>
+    <string name="title_activity_top_up_error">TopUpError</string>
+    <string name="title_activity_topup_success">TopupSuccess</string>
+    <string name="title_activity_contact_list">Contacts</string>
+    <string name="title_activity_transfer_success">Success</string>
+    <string name="title_activity_settings_profile">Profile</string>
+
+    <string name="link">\u00A9 2015 mybudgetload.com.  <a href="http://mybudgetload.com">Terms and Conditions</a></string>
+    <string name="title_activity_notifications">Notifications</string>
+    <string name="title_activity_community">Community</string>
+    <string name="title_activity_notification__details">Notification</string>
+    <string name="title_activity_community_list">Community</string>
+    <string name="title_activity_setting_password">Setting Password</string>
+    <string name="title_activity_password_setup">Password Setup</string>
+    <string name="title_activity_password_change">Change Password</string>
+    <string name="title_activity_gateway">Select an Outlet</string>
+    <string name="title_activity_payment_amount">PaymentAmount</string>
+    <string name="title_activity_gateway_list">Outlet</string>
+    <string name="title_activity_credits_amount">Amount</string>
+    <string name="title_activity_credits_confirmation">Confirmation</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-3409059871597746/9512184914</string>
+    <string name="banner_add_unit_id2">ca-app-pub-3409059871597746/3435298516</string>
+
+    <!--<string name="facebook_app_id">1835865303367276</string> &lt;!&ndash;For Testing&ndash;&gt;-->
+
+
+    <string name="facebook_app_id">1835864966700643</string>
+
+</resources>

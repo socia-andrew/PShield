@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.budgetload.materialdesign.activity.Profile"
+    tools:showIn="@layout/activity_profile">
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:scrollbarSize="0dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/txtwrapper1">-->
+
+            <EditText
+                android:id="@+id/lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittextbg"
+                android:digits="qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM "
+                android:ems="10"
+                android:hint="Last Name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:padding="15dp"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/profile_size"></EditText>
+
+            <EditText
+                android:id="@+id/firstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittextbg"
+                android:layout_marginTop="5dp"
+                android:digits="qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM "
+                android:ems="10"
+                android:hint="First Name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:padding="15dp"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/profile_size"></EditText>
+
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/txtwrapper2">-->
+
+
+
+
+            <EditText
+                android:id="@+id/middlename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittextbg"
+                android:digits="qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM "
+                android:ems="10"
+                android:hint="Middle Name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:padding="15dp"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/profile_size"></EditText>
+
+
+            <EditText
+                android:id="@+id/beerday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittextbg"
+                android:digits="qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM "
+                android:ems="10"
+                android:hint="Birthday"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:padding="15dp"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"
+                android:textCursorDrawable="@null"
+                android:visibility="gone"
+                android:textSize="@dimen/profile_size"></EditText>
+
+            <!--<DatePicker-->
+            <!--android:id="@+id/dpbeerday"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+
+
+            <!--<EditText-->
+            <!--android:id="@+id/gender"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:background="@drawable/edittextbg"-->
+            <!--android:digits="qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM. "-->
+            <!--android:ems="10"-->
+            <!--android:hint="Gender"-->
+            <!--android:inputType="textCapSentences"-->
+            <!--android:padding="15dp"-->
+            <!--android:textColor="@color/textColor"-->
+            <!--android:textColorHint="#2B60D0"-->
+            <!--android:textCursorDrawable="@null"-->
+            <!--android:imeOptions="actionNext"-->
+            <!--android:textSize="@dimen/profile_size">-->
+
+            <!--</EditText>-->
+
+            <Spinner
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittextbg"
+                android:entries="@array/gender"
+                android:paddingLeft="5dp"
+                android:visibility="gone"
+                android:textColor="@color/textColor" />
+
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/txtwrapper3">-->
+
+            <EditText
+                android:id="@+id/emailaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lastname"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittextbg"
+                android:digits="0123456789@qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM._- "
+                android:ems="10"
+                android:hint="Email Address"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:padding="15dp"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/profile_size"></EditText>
+
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/txtwrapper4">-->
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lastname"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittextbg"
+                android:digits="0,1,2,3,4,5,6,7,8,9,@,qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM. "
+                android:ems="10"
+                android:hint="Address"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:padding="15dp"
+                android:textColor="@color/textColor"
+                android:textColorHint="#2B60D0"
+                android:textCursorDrawable="@null"
+                android:visibility="gone"
+                android:textSize="@dimen/profile_size"></EditText>
+
+            <EditText
+                android:id="@+id/occupation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/address"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittextbg"
+                android:digits="0,1,2,3,4,5,6,7,8,9,@,qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM. "
+                android:ems="10"
+                android:hint="Occupation"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:padding="15dp"
+                android:textColor="@color/textColor"
+                android:textColorHint="#2B60D0"
+                android:textCursorDrawable="@null"
+                android:visibility="gone"
+                android:textSize="@dimen/profile_size"></EditText>
+
+            <!--<Spinner-->
+            <!--android:id="@+id/occupation"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:background="@drawable/edittextbg"-->
+            <!--android:entries="@array/gender"-->
+            <!--android:paddingLeft="5dp" />-->
+
+
+            <!--<Spinner-->
+            <!--android:id="@+id/interest"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:background="@drawable/edittextbg"-->
+            <!--android:entries="@array/gender"-->
+            <!--android:paddingLeft="5dp" />-->
+
+            <EditText
+                android:id="@+id/interest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/occupation"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittextbg"
+                android:digits="0,1,2,3,4,5,6,7,8,9,@,qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM. "
+                android:ems="10"
+                android:hint="Interest"
+                android:imeOptions="actionDone"
+                android:inputType="textCapSentences"
+                android:padding="15dp"
+                android:textColor="@color/textColor"
+                android:textColorHint="#2B60D0"
+                android:visibility="gone"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/profile_size"></EditText>
+
+            <Spinner
+                android:id="@+id/groupcode"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittextbg"
+                android:paddingLeft="5dp"
+                android:visibility="gone"
+                android:textColor="@color/textColor" />
+
+            <!--<Spinner-->
+            <!--android:id="@+id/dealertype"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:background="@drawable/edittextbg"-->
+            <!--android:paddingLeft="5dp" />-->
+
+
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+
+            <Button
+                android:id="@+id/btnProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/editText1"
+                android:layout_below="@+id/emailaddress"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/button_press"
+                android:text="SUBMIT"
+                android:visibility="visible"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

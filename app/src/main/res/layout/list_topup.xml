@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="8dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="8dp"
+    android:background="#ffffff"
+    android:descendantFocusability="blocksDescendants"
+    >
+
+    <TableRow
+        android:id="@+id/row6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_span="2"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/mobilenumberval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#404040"
+            android:textStyle="bold"
+            android:paddingRight="10dp"
+            android:text="09232274448"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/statusvalue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_marginRight="0dp"
+            android:textSize="12sp"
+            android:text="SUCCESS"
+            android:textColor="#006DD9" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/row6"
+        android:layout_span="2"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/amountval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="20000.00"
+            android:textColor="#006DD9"
+            android:textSize="13dp"/>
+
+        <TextView
+            android:id="@+id/datehour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="20000.00"
+            android:textColor="#777777"
+            android:textSize="13dp" />
+
+    </TableRow>
+
+
+
+    <!-- VISIBLE GONE BELOW -->
+
+    <TextView
+        android:id="@+id/txnstatval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+    <TextView
+        android:id="@+id/descval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/txnno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+
+    <TextView
+        android:id="@+id/prevbalval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/postbalval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/discountval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+
+    <TextView
+        android:id="@+id/budgetloadref"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wrap4"
+            android:gravity="center"
+            android:background="@color/listcolor"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="91dp"
+                android:layout_height="93dp"
+                android:id="@+id/imageView9"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wrap5"
+            android:layout_below="@+id/wrap4"
+            android:paddingBottom="20dp"
+            android:background="@color/listcolor">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView7"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:text=""/>
+
+        </TableRow>
+
+
+        <TableRow
+            android:id="@+id/wrap1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/wrap5"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/contacttopup" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Top-up"
+                android:textSize="20dp"
+                android:textColor="@color/moneyColor"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/wrap2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/wrap1"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/contaacttransfer" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Stock Transfer"
+                android:textSize="20dp"
+                android:textColor="@color/moneyColor"
+                android:textAlignment="center" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/wrap3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/wrap2"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/contactinvite" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Invite"
+                android:textSize="20dp"
+                android:textColor="@color/moneyColor"
+                android:textAlignment="center" />
+
+        </TableRow>
+    </RelativeLayout>
+
+</RelativeLayout>

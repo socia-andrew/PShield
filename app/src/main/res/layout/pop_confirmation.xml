@@ -1,0 +1,164 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:id="@+id/tblrow1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/listcolor"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/process" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tblrow2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tblrow1"
+                android:background="@color/listcolor"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:text="Transaction is on Process"
+                    android:textColor="@color/white"
+                    android:textSize="22dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tblrow3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tblrow2"
+                android:layout_marginTop="10dp"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/popnum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:text="09225090290"
+                    android:textColor="@color/textColor"
+                    android:textSize="22dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tblrow4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tblrow3"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/popbrand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:text="SUN"
+                    android:textColor="@color/textColor"
+                    android:textSize="22dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tblrow5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tblrow4"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/popProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:text="Call and Text Combo 10"
+                    android:textColor="@color/textColor"
+                    android:textSize="22dp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tblrow6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tblrow5"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/popAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:text="P10.00"
+                    android:textColor="@color/textColor"
+                    android:textSize="22dp" />
+
+            </TableRow>
+
+
+            <TextView
+                android:id="@+id/popTopUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tblrow6"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_toLeftOf="@+id/popTxns"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:paddingBottom="30dp"
+                android:paddingRight="20dp"
+                android:text="TOP-UP"
+                android:textColor="#19BD4E"
+                android:textSize="16dp" />
+
+
+            <TextView
+                android:id="@+id/popTxns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tblrow6"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:paddingBottom="30dp"
+                android:paddingRight="20dp"
+                android:text="TRANSACTIONS"
+                android:textColor="#19BD4E"
+                android:textSize="16dp" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

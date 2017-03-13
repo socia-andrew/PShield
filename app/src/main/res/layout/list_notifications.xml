@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="10dp"
+    android:background="#ffffff"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical"
+    android:paddingBottom="5dp">
+
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/app_name" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/image_view"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/image_view"
+        android:layout_toRightOf="@+id/image_view">
+
+
+        <TextView
+            android:id="@+id/sender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="sender"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/listcolor"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/txttitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Admin"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/listcolor"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txtmessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/sender"
+            android:layout_alignStart="@+id/sender"
+            android:layout_below="@+id/sender"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-normal"
+            android:lines="1"
+            android:text="Enjoy 10% discount if you reload your wallet before 5 PM. Present this code HH23 upon purchasing credits. Hurry and reload now."
+            android:textColor="@color/listcolor"
+            android:textSize="16dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtmessage"
+            android:padding="5dp">
+
+
+            <TextView
+                android:id="@+id/txtdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif-thin"
+                android:gravity="right"
+                android:text="Nov 1 11:00 PM"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#232323" />
+
+        </TableRow>
+
+        <TextView
+            android:id="@+id/txtid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/txtmessage"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="right"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#696C72"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txtrmobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

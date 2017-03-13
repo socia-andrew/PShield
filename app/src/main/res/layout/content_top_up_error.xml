@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAE8F3"
+    android:padding="20dp"
+    tools:context="com.budgetload.materialdesign.activity.TopUpError" >
+
+    <RelativeLayout
+        android:id="@+id/wrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/resultlbl"
+            android:layout_span="2"
+            android:background="#7A7A7A" >
+
+            <Button
+                android:id="@+id/okey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#7A7A7A"
+                android:gravity="center"
+                android:text="OK"
+                android:textColor="#ffffff"
+                android:textSize="13dp" />
+
+
+        </TableRow>
+
+
+
+        <TableRow
+            android:id="@+id/TableRow01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="#D0322E"
+            android:padding="15dp"
+            >
+
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Network Status"
+                android:textColor="#ffffff"
+                android:textSize="18sp"/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/prodwrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/TableRow01"
+            android:layout_marginTop="1dp"
+            android:background="#ffffff"
+            android:padding="10dp" >
+
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/amountval"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="19dp"
+                android:src="@drawable/networkoffline" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/resultlbl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/prodwrap"
+            android:background="#ffffff"
+            android:padding="20dp"
+            android:paddingBottom="20dp"
+            >
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="GLOBE NETWORK IS CURRENTLY OFFLINE"
+                android:textColor="#D0322E"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+        </TableRow>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

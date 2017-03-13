@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="8dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="8dp">
+
+    <!--<ImageView-->
+    <!--android:id="@+id/imageView1"-->
+    <!--android:layout_width="55dp"-->
+    <!--android:layout_height="55dp"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:background="@drawable/imagecircle"
+       android:siBorderWidth="6dp"
+    android:siBorderColor="@color/white"/>-->
+
+    <!--<com.github.siyamed.shapeimageview.CircularImageView-->
+    <!--android:id="@+id/imageView1"-->
+    <!--android:layout_width="50dp"-->
+    <!--android:layout_height="50dp"-->
+    <!--/>-->
+
+    <!--<de.hdodenhof.circleimageview.CircleImageView-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--android:id="@+id/imageView1"-->
+    <!--android:layout_width="50dp"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:layout_marginRight="10dp"-->
+    <!--android:src="@drawable/wallet"-->
+    <!--app:civ_border_width="2dp"-->
+    <!--app:civ_border_color="@android:color/transparent"/>-->
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="3dp"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/txtname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_toEndOf="@+id/image_view"
+        android:layout_toRightOf="@+id/image_view"
+        android:fontFamily="sans-serif-light"
+        android:paddingBottom="2dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="0dp"
+        android:text="Contact Name"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/listcolor"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtcontactno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtname"
+        android:layout_alignStart="@+id/txtname"
+        android:layout_below="@+id/txtname"
+        android:fontFamily="sans-serif-light"
+        android:paddingBottom="0dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="0dp"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/listcolor"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/txtcontactid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/lblNetwork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/txtname"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/listcolor" />
+
+</RelativeLayout>

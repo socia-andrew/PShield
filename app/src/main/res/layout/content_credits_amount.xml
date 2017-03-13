@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_credits_amount"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.budgetload.materialdesign.activity.creditsAmount"
+    tools:showIn="@layout/activity_credits_amount">
+
+    <TableRow
+        android:id="@+id/tblrow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/headerColor">
+
+        <ImageView
+            android:id="@+id/requestcredits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0"
+            android:background="@drawable/requestcredits"
+            android:gravity="center"
+            android:padding="16dp" />
+
+
+        <TextView
+            android:id="@+id/txtMyWallet"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:padding="10dp"
+            android:text="--.--"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/moneyColor"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/walleticon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0"
+            android:background="@drawable/wallet"
+            android:gravity="center"
+            android:padding="16dp" />
+
+
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:background="@drawable/textviewbg"
+            android:padding="15dp"
+            android:text="PHP"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/menucolor"
+            android:textSize="20dp" />
+
+
+        <EditText
+            android:id="@+id/txtPurchase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tblrow2"
+            android:layout_weight="1"
+            android:background="@drawable/textviewbg"
+            android:digits="0123456789"
+            android:gravity="right"
+            android:hint="0.00"
+            android:imeOptions="actionDone"
+            android:inputType="number|phone"
+            android:maxLength="4"
+            android:padding="15dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/menucolor"
+            android:textColorHint="@color/menucolor"
+            android:textCursorDrawable="@null"
+            android:textSize="20dp">
+
+            <requestFocus />
+        </EditText>
+
+
+    </TableRow>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Payment Method" />
+
+        <TextView
+            android:id="@+id/txtpm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Online Banking - MetroBank"
+            android:textColor="@color/menucolor"
+            android:textSize="18dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Payment Fee" />
+
+        <TextView
+            android:id="@+id/txtFee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="right"
+            android:text="0.00"
+            android:textColor="@color/menucolor"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

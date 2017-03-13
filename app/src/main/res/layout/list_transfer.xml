@@ -1,0 +1,207 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="8dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="8dp"
+    android:background="#ffffff"
+    >
+
+    <TableRow
+        android:id="@+id/row1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_span="2"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/datetimelbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Sender:"
+            android:textColor="#9A9A9A"/>
+
+        <TextView
+            android:id="@+id/sender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="09232274448"
+            android:paddingRight="15dp"
+            android:textColor="#006DD9"
+            android:textSize="15dp"
+            android:paddingLeft="18dp" />
+
+
+
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/row1"
+        android:layout_span="2"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/branchlbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textColor="#9A9A9A"
+            android:text="Receiver:"/>
+
+        <TextView
+            android:id="@+id/receiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="09162283232"
+            android:paddingRight="15dp"
+            android:textColor="#006DD9"
+            android:textSize="15dp"
+            android:paddingLeft="8dp"
+            android:layout_marginLeft="1dp" />
+
+    </TableRow>
+    <TableRow
+        android:id="@+id/row3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/row2"
+        android:layout_span="2"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/amountlbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#9A9A9A"
+            android:paddingRight="10dp"
+            android:text="Amount:" />
+
+        <TextView
+            android:id="@+id/amountval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="20000.00"
+            android:textColor="#006DD9"
+            android:textSize="13dp"
+            android:layout_marginLeft="5dp" />
+
+
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/row3"
+        android:layout_span="2"
+        android:background="#ffffff">
+
+
+        <TextView
+            android:id="@+id/datelbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#9A9A9A"
+            android:paddingRight="10dp"
+            android:text="Date:" />
+
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="jan 10,2015"
+            android:textColor="#006DD9"
+            android:textSize="13dp"
+            android:layout_marginLeft="25dp" />
+
+    </TableRow>
+
+    <!-- VISIBLE GONE BELOW -->
+
+
+
+
+    <TextView
+        android:id="@+id/txnid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+
+
+    <TextView
+        android:id="@+id/retailerprevstock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/retailerprevconsumed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+
+
+    <TextView
+        android:id="@+id/retailerprevavailable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+
+
+    <TextView
+        android:id="@+id/prebalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/postbalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/sendercommunity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/receivercommunity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+</RelativeLayout>

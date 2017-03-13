@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E2E7F0"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.budgetload.materialdesign.activity.SettingsProfile"
+    tools:showIn="@layout/activity_settings_profile">
+
+
+    <RelativeLayout
+        android:id="@+id/tableheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TableRow
+            android:id="@+id/header1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#6596e9">
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/header2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header1"
+            android:background="#e2e7f0"
+            android:gravity="center"
+            android:minHeight="40dp">
+
+            <TextView
+                android:id="@+id/fullname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="FirstN MiddleN LastN"
+                android:textColor="#2f63cd"
+                android:textSize="22dp"
+                android:visibility="gone" />
+
+        </TableRow>
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="18dp"
+            android:scaleType="centerInside" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/tableheader"
+        android:scrollbarSize="0dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/walletwrap"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/fnamewrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/walletwrap"
+                android:layout_span="2"
+                android:background="#ffffff"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:visibility="gone">
+
+                <TableRow
+                    android:id="@+id/tblfname1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/fnamelbl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.17"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:text="First Name: "
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#616161" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tblfname2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tblfname1">
+
+                    <EditText
+                        android:id="@+id/editfirstname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:fontFamily="sans-serif-Large"
+                        android:digits="qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM "
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:textColor="#5e7bb8"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20dp" />
+                </TableRow>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mnamewrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/fnamewrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:visibility="gone">
+
+                <TableRow
+                    android:id="@+id/tblmname1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/mnamelbl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.17"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:text="Middle Name: "
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#616161" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tblmname2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tblmname1">
+
+                    <EditText
+                        android:id="@+id/editmiddlename"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:fontFamily="sans-serif-Large"
+                        android:digits="qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM "
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:textColor="#5e7bb8"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20dp" />
+                </TableRow>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/lnamewrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/mnamewrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:visibility="gone">
+
+                <TableRow
+                    android:id="@+id/tbllname1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/lnamelbl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.17"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:text="Last Name: "
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#616161" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tbllname2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tbllname1">
+
+                    <EditText
+                        android:id="@+id/editlastname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:fontFamily="sans-serif-Large"
+                        android:digits="qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM "
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:textColor="#5e7bb8"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20dp" />
+                </TableRow>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mobilenumbewrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lnamewrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp">
+
+                <TableRow
+                    android:id="@+id/tblmobile1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/mobilelbl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.17"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:text="Mobile Number: "
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#616161" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tblmobile2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tblmobile1">
+
+                    <EditText
+                        android:id="@+id/mobileval"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:fontFamily="sans-serif-Large"
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:textColor="#5e7bb8"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20dp" />
+                </TableRow>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/emailwrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/mobilewrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp">
+
+                <TableRow
+                    android:id="@+id/tblemail1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/emaillbl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.17"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:text="Email:"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#616161" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tblemail2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tblemail1">
+
+                    <EditText
+                        android:id="@+id/emailval"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:digits="0123456789/qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM@._"
+                        android:fontFamily="sans-serif-Large"
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:textColor="#5e7bb8"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20dp" />
+                </TableRow>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/addresswrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/emailwrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp">
+
+                <TableRow
+                    android:id="@+id/tbladdress1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/addresslbl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.17"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:text="Address:"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#616161" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tbladdress2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tbladdress1">
+
+                    <EditText
+                        android:id="@+id/addressval"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:digits="0,1,2,3,4,5,6,7,8,9,/,qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM@. "
+                        android:fontFamily="sans-serif-Large"
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:textColor="#5e7bb8"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20dp" />
+                </TableRow>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/genderwrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/addresswrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp">
+
+                <TableRow
+                    android:id="@+id/tblgender1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/genderlbl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.17"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:text="Gender:"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#616161" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tblgender2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tblgender1">
+
+                    <Spinner
+                        android:id="@+id/genderval"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:ems="10"
+                        android:fontFamily="sans-serif-Large"
+                        android:paddingLeft="10dp"
+                        android:textColor="#5e7bb8"
+                        android:textSize="20dp" />
+                </TableRow>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bdaywrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/genderwrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp">
+
+                <TableRow
+                    android:id="@+id/tblbday1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/bdaylbl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.17"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:text="Birthday:"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#616161" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tblbday2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tblbday1">
+
+                    <EditText
+                        android:id="@+id/bdayval"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:fontFamily="sans-serif-Large"
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:textColor="#5e7bb8"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20dp" />
+                </TableRow>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/occupationwrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/genderwrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp">
+
+                <TableRow
+                    android:id="@+id/tbloccupation1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/occupationlbl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.17"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:text="Occupation:"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#616161" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tbloccupation2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tbloccupation1">
+
+                    <EditText
+                        android:id="@+id/occupationval"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:digits="0,1,2,3,4,5,6,7,8,9,/,qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM@. "
+                        android:fontFamily="sans-serif-Large"
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:textColor="#5e7bb8"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20dp" />
+                </TableRow>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/interestwrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/occupationwrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp">
+
+                <TableRow
+                    android:id="@+id/tblinterest1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/interestlbl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.17"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:text="Interest:"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#616161" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tblinterest2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tblinterest1">
+
+                    <EditText
+                        android:id="@+id/interestval"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:digits="0,1,2,3,4,5,6,7,8,9,/,qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM@. "
+                        android:fontFamily="sans-serif-Large"
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:textColor="#5e7bb8"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20dp" />
+                </TableRow>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/groupwrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/interestwrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp">
+
+                <TableRow
+                    android:id="@+id/tblgroup1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/grouplbl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.17"
+                        android:digits="0,1,2,3,4,5,6,7,8,9,/,qwertzuiopasdfghjklyxcvbnm@."
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:text="Group:"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#616161" />
+                </TableRow>
+
+
+                <EditText
+                    android:id="@+id/groupcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tblgroup1"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:fontFamily="sans-serif-Large"
+                    android:paddingLeft="10dp"
+                    android:text=""
+                    android:textColor="#5e7bb8"
+                    android:textCursorDrawable="@null"
+                    android:textSize="20dp"
+                    android:visibility="visible" />
+
+                <Spinner
+                    android:id="@+id/groupval"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/tblgroup1"
+                    android:layout_marginTop="10dp"
+                    android:background="#ffffff"
+                    android:fontFamily="sans-serif-Large"
+                    android:paddingLeft="10dp"
+                    android:textColor="#5e7bb8"
+                    android:textSize="20dp"
+                    android:visibility="gone" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/dealerwrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/interestwrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp">
+
+                <TableRow
+                    android:id="@+id/tbldealer1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/dealerlbl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.17"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:text="Dealer Type:"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#616161" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tbldealer2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tbldealer1">
+
+                    <EditText
+                        android:id="@+id/dealerval"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:fontFamily="sans-serif-Large"
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:textColor="#5e7bb8"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20dp" />
+                </TableRow>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/refwrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/interestwrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp">
+
+                <TableRow
+                    android:id="@+id/tblref1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/reflbl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.17"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:text="Referrer:"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#616161" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tblref2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tblref1">
+
+                    <EditText
+                        android:id="@+id/refval"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:fontFamily="sans-serif-Large"
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:textColor="#5e7bb8"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20dp" />
+                </TableRow>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/commuwrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/refwrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp">
+
+                <TableRow
+                    android:id="@+id/tblcommu1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/commulbl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.17"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:text="Community:"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#616161" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tblcommu2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tblcommu1">
+
+                    <EditText
+                        android:id="@+id/commuval"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:fontFamily="sans-serif-Large"
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        android:textColor="#5e7bb8"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20dp" />
+                </TableRow>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/loader"-->
+    <!--android:visibility="gone"-->
+    <!--/>-->
+    <!--<ProgressBar-->
+    <!--android:id="@+id/prograssBar1"-->
+    <!--style="?android:attr/progressBarStyleLarge"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="50dp"-->
+    <!--/>-->
+
+</RelativeLayout>

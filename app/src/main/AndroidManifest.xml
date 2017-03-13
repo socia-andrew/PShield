@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.budgetload.materialdesign">
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <permission
+        android:name="com.epayvenue.budgetload.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.epayvenue.budgetload.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <!-- android:name=".Parse.MyApplication" -->
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:theme="@style/MyMaterialTheme">
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <service android:name=".Fcm.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.Register"
+            android:label="@string/title_activity_register"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.Registration_Spash"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.Verify"
+            android:label="@string/title_activity_verify"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.Profile"
+            android:label="@string/title_activity_profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.Product"
+            android:label="@string/title_activity_product"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.TopUpError"
+            android:label="Confirmation - Error"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.TopupSuccess"
+            android:label="Confirmation - Success"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.ContactList"
+            android:label="@string/title_activity_contact_list"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.TransferSuccess"
+            android:label="@string/title_activity_transfer_success"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.SettingsProfile"
+            android:label="@string/title_activity_settings_profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.Settings_FAQ"
+            android:label="FAQ`s"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.SettingsFileTicket"
+            android:icon="@drawable/app_icon_your_company"
+            android:label="File Ticket"
+            android:logo="@drawable/app_icon_your_company"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.Ticket"
+            android:label="Select Topic"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.SettingsAbout"
+            android:label="About"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.Community"
+            android:label="@string/title_activity_community"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.Notification_Details"
+            android:label="@string/title_activity_notification__details"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.CommunityList"
+            android:label="@string/title_activity_community_list"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.SettingPassword"
+            android:label="@string/title_activity_setting_password"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.PasswordSetup"
+            android:label="@string/title_activity_password_setup"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.PasswordChange"
+            android:label="@string/title_activity_password_change"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.GatewayPayment"
+            android:label="@string/title_activity_gateway"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.PaymentAmount"
+            android:label="@string/title_activity_payment_amount"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.creditsAmount"
+            android:label="@string/title_activity_credits_amount"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".activity.creditsConfirmation"
+            android:label="@string/title_activity_credits_confirmation"
+            android:theme="@style/MyMaterialTheme" />
+        <activity android:name=".activity.MyWebView"></activity>
+    </application>
+
+</manifest>

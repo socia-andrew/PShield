@@ -1,0 +1,221 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stocktransfer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:orientation="vertical"
+    tools:context="com.budgetload.materialdesign.activity.StockTransfer">
+
+
+    <TableRow
+        android:id="@+id/tblrow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/searchColor">
+
+        <ImageView
+            android:id="@+id/requestcredits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0"
+            android:background="@drawable/requestcredits"
+            android:gravity="center"
+            android:padding="16dp" />
+
+
+        <TextView
+            android:id="@+id/txtMyWallet"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:padding="10dp"
+            android:text="--.--"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/moneyColor"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/walleticon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0"
+            android:background="@drawable/wallet"
+            android:gravity="center"
+            android:padding="16dp" />
+
+
+    </TableRow>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tblrow1">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/scrollView">
+
+
+            <TableRow
+                android:id="@+id/tblrow2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+
+                android:layout_marginTop="10dp"
+                android:background="@drawable/textviewbg"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/mycontact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:layout_weight="0"
+                    android:background="@drawable/contactidicon"
+                    android:gravity="center"
+                    android:padding="16dp" />
+
+                <!--<TextView-->
+                <!--android:id="@+id/txttargetmobile"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@drawable/textviewbg"-->
+                <!--android:gravity="left"-->
+                <!--android:hint="Target Mobile No."-->
+                <!--android:padding="10dp"-->
+                <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+                <!--android:textColor="@color/textColor"-->
+                <!--android:textColorHint="@color/textColor" />-->
+
+                <EditText
+                    android:id="@+id/txttargetmobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/tblrow2"
+                    android:layout_weight="1"
+                    android:background="@drawable/textviewbg"
+                    android:digits="0123456789"
+                    android:hint="Recipient Mobile No."
+                    android:inputType="number|phone"
+                    android:maxLength="11"
+                    android:padding="15dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/textColor"
+                    android:textColorHint="@color/hintColor"
+                    android:textCursorDrawable="@null"
+                    android:textSize="20dp">
+
+                    <requestFocus />
+                </EditText>
+
+            </TableRow>
+
+            <EditText
+                android:id="@+id/community"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tblrow2"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/textviewbg"
+                android:drawableRight="@drawable/arrow"
+                android:editable="false"
+                android:hint="Select Community"
+                android:padding="15dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/hintColor"
+                android:textCursorDrawable="@null"
+                android:textSize="20dp"
+                android:visibility="gone" />
+
+
+            <EditText
+                android:id="@+id/txtAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/community"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/textviewbg"
+                android:digits="0123456789"
+                android:hint="Amount"
+                android:inputType="numberDecimal"
+                android:maxLength="6"
+                android:padding="15dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/hintColor"
+                android:textCursorDrawable="@null"
+                android:textSize="20dp"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true">
+
+
+        <android.support.design.widget.FloatingActionButton xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/txtAmount"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/fabarrow"
+            android:visibility="gone"
+            app:backgroundTint="#2F63CD"
+            app:rippleColor="#88abf5" />
+
+    </ScrollView>
+
+
+    <!--<com.google.android.gms.ads.AdView-->
+    <!--android:id="@+id/adView1"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_marginBottom="50dp"-->
+    <!--ads:adSize="BANNER"-->
+    <!--ads:adUnitId="@string/banner_add_unit_id2"></com.google.android.gms.ads.AdView>-->
+
+</RelativeLayout>

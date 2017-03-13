@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/profileColor">
+
+
+    <RelativeLayout
+        android:id="@+id/nav_header_container"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_alignParentTop="true">
+
+        <!--android:background="@drawable/header"-->
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/profile"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/mobileno"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="09232274448"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/drawerList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/nav_header_container"
+        android:layout_marginTop="0dp"
+        android:background="@color/drawerBackground" />
+
+    <!-- android:background="#425274"-->
+
+</RelativeLayout>

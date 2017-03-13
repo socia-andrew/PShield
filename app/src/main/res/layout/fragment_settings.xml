@@ -1,0 +1,248 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.budgetload.materialdesign.activity.BudgetLoadSettings">
+
+    <TableRow
+        android:id="@+id/walletwrap"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/headerColor">
+
+
+        <ImageView
+            android:id="@+id/requestcredits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0"
+            android:background="@drawable/requestcredits"
+            android:gravity="center"
+            android:padding="16dp" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:padding="10dp"
+            android:text="--.--"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/moneyColor"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/walleticon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0"
+            android:background="@drawable/wallet"
+            android:gravity="center"
+            android:padding="16dp" />
+
+    </TableRow>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/walletwrap"
+        android:scrollbarSize="0dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+
+            <TableRow
+                android:id="@+id/emailwrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/walletwrap"
+                android:layout_marginTop="30dp"
+                android:layout_span="2"
+                android:background="#ffffff">
+
+                <Button
+                    android:id="@+id/profile"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:drawableRight="@drawable/arrow"
+                    android:gravity="left"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Profile"
+                    android:textAllCaps="false"
+                    android:textColor="#616161"
+                    android:textSize="18sp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/passwordwrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/emailwrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff">
+
+                <Button
+                    android:id="@+id/password"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:drawableRight="@drawable/arrow"
+                    android:gravity="left"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Password"
+                    android:textAllCaps="false"
+                    android:textColor="#616161"
+                    android:textSize="18sp" />
+
+
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/FAQwrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/emailwrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff">
+
+                <Button
+                    android:id="@+id/FAQ"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:drawableRight="@drawable/arrow"
+                    android:gravity="left"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:text="FAQ`s"
+                    android:textAllCaps="false"
+                    android:textColor="#616161"
+                    android:textSize="18sp" />
+
+
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/FileTicketwrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/bulletinwrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff">
+
+                <Button
+                    android:id="@+id/fileticket"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:drawableRight="@drawable/arrow"
+                    android:gravity="left"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Complain/Suggestion"
+                    android:textAllCaps="false"
+                    android:textColor="#616161"
+                    android:textSize="18sp" />
+
+
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/deactivatewrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/FileTicketwrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff">
+
+                <Button
+                    android:id="@+id/deactivate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:gravity="left"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Deactivate"
+                    android:textAllCaps="false"
+                    android:textColor="#616161"
+                    android:textSize="18sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/aboutwrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/deactivatewrap"
+                android:layout_marginTop="1dp"
+                android:layout_span="2"
+                android:background="#ffffff">
+
+                <Button
+                    android:id="@+id/about"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:drawableRight="@drawable/arrow"
+                    android:gravity="left"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:text="About"
+                    android:textAllCaps="false"
+                    android:textColor="#616161"
+                    android:textSize="18sp" />
+            </TableRow>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

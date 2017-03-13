@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_credits_amount"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.budgetload.materialdesign.activity.creditsConfirmation"
+    tools:showIn="@layout/activity_credits_confirmation">
+
+    <TableRow
+        android:id="@+id/tblrow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/headerColor">
+
+        <ImageView
+            android:id="@+id/requestcredits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0"
+            android:background="@drawable/requestcredits"
+            android:gravity="center"
+            android:padding="16dp" />
+
+
+        <TextView
+            android:id="@+id/txtMyWallet"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:padding="10dp"
+            android:text="--.--"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/moneyColor"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/walleticon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0"
+            android:background="@drawable/wallet"
+            android:gravity="center"
+            android:padding="16dp" />
+
+
+    </TableRow>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="You are about to purchase."
+        android:textColor="@color/menucolor"
+        android:textSize="20dp" />
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Amount"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtpuramount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="P 00.00"
+            android:textColor="@color/menucolor"
+            android:textSize="20dp" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Payment Fee"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtpaymentfee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="P 00.00"
+            android:textColor="@color/menucolor"
+            android:textSize="20dp" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/textviewbg"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Total Amount"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtTotalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="P 00.00"
+            android:textColor="@color/menucolor"
+            android:textSize="20dp" />
+
+
+    </TableRow>
+
+</LinearLayout>

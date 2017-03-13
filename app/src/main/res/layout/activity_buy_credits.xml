@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_buy_credits"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:orientation="vertical"
+    tools:context="com.budgetload.materialdesign.activity.BuyCredits">
+
+    <TableRow
+        android:id="@+id/tblrow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/headerColor">
+
+        <ImageView
+            android:id="@+id/requestcredits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0"
+            android:background="@drawable/requestcredits"
+            android:gravity="center"
+            android:padding="16dp" />
+
+
+        <TextView
+            android:id="@+id/txtMyWallet"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:padding="10dp"
+            android:text="--.--"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/moneyColor"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/walleticon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0"
+            android:background="@drawable/wallet"
+            android:gravity="center"
+            android:padding="16dp" />
+
+
+    </TableRow>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+</LinearLayout>
