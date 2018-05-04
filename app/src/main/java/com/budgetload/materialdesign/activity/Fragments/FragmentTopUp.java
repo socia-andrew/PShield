@@ -1,4 +1,4 @@
-package com.budgetload.materialdesign.activity;
+package com.budgetload.materialdesign.activity.Fragments;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -59,6 +59,11 @@ import com.budgetload.materialdesign.Constant.Constant;
 import com.budgetload.materialdesign.Constant.Indicators;
 import com.budgetload.materialdesign.DataBase.DataBaseHandler;
 import com.budgetload.materialdesign.R;
+import com.budgetload.materialdesign.activity.ContactList;
+import com.budgetload.materialdesign.Common.GlobalVariables;
+import com.budgetload.materialdesign.activity.MainActivity;
+import com.budgetload.materialdesign.activity.Product;
+import com.budgetload.materialdesign.activity.TopUpError;
 import com.google.android.gms.ads.AdView;
 
 import org.apache.http.HttpEntity;
@@ -80,7 +85,7 @@ import java.text.DecimalFormat;
 // 1 - select product
 // 2 - topup
 
-public class TopUpLoad extends Fragment implements View.OnTouchListener, View.OnClickListener, Constant, OnItemSelectedListener {
+public class FragmentTopUp extends Fragment implements View.OnTouchListener, View.OnClickListener, Constant, OnItemSelectedListener {
 
     //region declaring variables
     View rootView;
@@ -325,7 +330,11 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
                             tartgetmobile = editTargetMobile.getText().toString();
                             networkprfix = tartgetmobile.substring(1, 4); //editTargetMobile.getText().toString().substring(1, 4);
                             brand = db.getNetworkPrefix(db, networkprfix);
+
                             editNetwork.setVisibility(View.VISIBLE);
+                            HideKeyboard.hideKeyboard(getActivity());
+
+
                             if (brand.length() == 0) {
                                 txtProdType.setVisibility(View.GONE);
                                 editNetwork.setVisibility(View.GONE);
@@ -345,7 +354,6 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
                                 } else {
                                     editNetwork.setText(brand);
                                 }
-                                HideKeyboard.hideKeyboard(getActivity());
 
 
                                 String myname = getContactDisplayNameByNumber(editTargetMobile.getText().toString());
@@ -355,10 +363,31 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
                                     editTargetMobile.setText(tartgetmobile + "\n" + Html.fromHtml("<span>" + myname + "</span>"));
 
                                     if (brand.equalsIgnoreCase("GLOBE")) {
-                                        //dialog.show();
-                                        spinType.setVisibility(View.VISIBLE);
-                                        spinType.setSelection(0);
+                                        Toast.makeText(mcontext, "Sorry, Globe is temporarily not avaiable.", Toast.LENGTH_SHORT).show();
+                                        editTargetMobile.setText("");
+
+//                                    } else if (brand.equalsIgnoreCase("TNT") ||
+//                                            brand.equalsIgnoreCase("BUDDY") ||
+//                                            brand.equalsIgnoreCase("BUDDYBRO")) {
+//
+//                                        boolean isAllowed = db.getCheckNumber(db, brand, networkprfix, editTargetMobile.getText().toString());
+//
+//                                        if (!isAllowed) {
+//                                            Toast.makeText(getActivity(), "Sorry, Cannot Top-Up this number", Toast.LENGTH_LONG).show();
+//                                            return;
+//                                        }
+//
+//                                        params.setMargins(0, 7, 0, 0);
+//                                        txtProdType.setLayoutParams(params);
+//                                        txtProdType.setVisibility(View.VISIBLE);
+//                                        editRegLoad.setVisibility(View.GONE);
+//                                        fab.setVisibility(View.VISIBLE);
+//                                        topupState = 1;
+
+//
                                     } else {
+
+
                                         params.setMargins(0, 7, 0, 0);
                                         txtProdType.setLayoutParams(params);
                                         txtProdType.setVisibility(View.VISIBLE);
@@ -370,9 +399,10 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
                                 } else {
 
                                     if (brand.equalsIgnoreCase("GLOBE")) {
-                                        //dialog.show();
-                                        spinType.setVisibility(View.VISIBLE);
-                                        spinType.setSelection(0);
+                                        Toast.makeText(mcontext, "Sorry, Globe is temporarily not avaiable.", Toast.LENGTH_SHORT).show();
+                                        editTargetMobile.setText("");
+                                        // spinType.setVisibility(View.VISIBLE);
+                                        // spinType.setSelection(0);
                                     } else {
                                         params.setMargins(0, 7, 0, 0);
                                         txtProdType.setLayoutParams(params);
@@ -405,7 +435,9 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
                 }
             });
 
-            editTargetMobile.setOnTouchListener(new View.OnTouchListener() {
+            editTargetMobile.setOnTouchListener(new View.OnTouchListener()
+
+            {
                 final int DRAWABLE_RIGHT = 2;
 
                 @Override
@@ -438,7 +470,9 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
 
 
             //Click on the circle Icon to submit
-            fab.setOnClickListener(new View.OnClickListener() {
+            fab.setOnClickListener(new View.OnClickListener()
+
+            {
                 @Override
                 public void onClick(View view) {
                     fab.setEnabled(false);
@@ -449,28 +483,32 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
             txtProdType.setOnClickListener(this);
 
             //For the amount (regular load sa globe) listener
-            editRegLoad.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {
-                }
+            editRegLoad.addTextChangedListener(new
 
-                @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                }
+                                                       TextWatcher() {
+                                                           @Override
+                                                           public void onTextChanged(CharSequence s, int start, int before, int count) {
+                                                           }
 
-                @Override
-                public void afterTextChanged(Editable s) {
-                    if (s.length() > 0) {
-                        fab.setVisibility(View.VISIBLE);
-                        topupState = 2;
-                    }
-                }
-            });
+                                                           @Override
+                                                           public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                                                           }
+
+                                                           @Override
+                                                           public void afterTextChanged(Editable s) {
+                                                               if (s.length() > 0) {
+                                                                   fab.setVisibility(View.VISIBLE);
+                                                                   topupState = 2;
+                                                               }
+                                                           }
+                                                       });
 
 
             //
             Bundle mybundle = getArguments();
-            if (mybundle != null) {
+            if (mybundle != null)
+
+            {
                 String mobile = mybundle.getString("mobile").toString();
                 if (mobile.length() > 0) {
                     HideKeyboard.hideKeyboard(mcontext);
@@ -478,7 +516,9 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
                 }
             }
 
-            editRegLoad.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            editRegLoad.setOnEditorActionListener(new TextView.OnEditorActionListener()
+
+            {
                 @Override
                 public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                     int result = actionId & EditorInfo.IME_MASK_ACTION;
@@ -493,7 +533,9 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
 
 
             //Confirming Top-Up (DIALOG)
-            popTopUP.setOnClickListener(new View.OnClickListener() {
+            popTopUP.setOnClickListener(new View.OnClickListener()
+
+            {
                 @Override
                 public void onClick(View view) {
                     dialog.cancel();
@@ -513,7 +555,9 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
             });
 
             //Choosing Transaction option after top-up (go to transaction)
-            popTxn.setOnClickListener(new View.OnClickListener() {
+            popTxn.setOnClickListener(new View.OnClickListener()
+
+            {
                 @Override
                 public void onClick(View v) {
                     dialog.cancel();
@@ -524,7 +568,9 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
 
             //click on Update (force update modal)
             Button ok = (Button) dialog1.findViewById(R.id.update);
-            ok.setOnClickListener(new View.OnClickListener() {
+            ok.setOnClickListener(new View.OnClickListener()
+
+            {
                 @Override
                 public void onClick(View v) {
                     Uri uriUrl = Uri.parse("https://play.google.com/store/apps/details?id=com.epayvenue.budgetload");
@@ -535,7 +581,9 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
 
             //click cancel on the force quit update
             Button cancel = (Button) dialog1.findViewById(R.id.cancel);
-            cancel.setOnClickListener(new View.OnClickListener() {
+            cancel.setOnClickListener(new View.OnClickListener()
+
+            {
                 @Override
                 public void onClick(View v) {
                     dialog1.cancel();
@@ -544,7 +592,9 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
 
             });
 
-            imgrequestcredits.setOnClickListener(new View.OnClickListener() {
+            imgrequestcredits.setOnClickListener(new View.OnClickListener()
+
+            {
                 @Override
                 public void onClick(View v) {
                     v.setEnabled(false);
@@ -649,12 +699,11 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
             //Open Product Type
             case R.id.txtprodtype:
                 txtProdType.setEnabled(false);
-                Intent intent = new Intent(getActivity(), Product.class);
+                Intent intent = new Intent(mcontext, Product.class);
                 Bundle b = new Bundle();
                 b.putString("Brand", brand);
                 intent.putExtras(b);
                 startActivityForResult(intent, 1);
-
                 break;
 
 
@@ -666,12 +715,19 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+
         try {
             HideKeyboard.hideKeyboard(getActivity());
             contacticon.setEnabled(true);
             if (requestCode == 1) {
+
+                //Toast.makeText(mcontext, "here" + resultCode, Toast.LENGTH_SHORT).show();
+
                 txtProdType.setEnabled(true);
                 if (resultCode == Activity.RESULT_OK) {
+
+                   // Toast.makeText(mcontext, "Here1" + resultCode, Toast.LENGTH_SHORT).show();
+
                     txtProdType.setText(data.getStringExtra("ProductDescription"));
                     txtproductcode.setText(data.getStringExtra("ProductCode"));
                     txtproductamount.setText(data.getStringExtra("ProductAmount"));
@@ -734,6 +790,7 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
                 }
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
 
 
@@ -1285,7 +1342,7 @@ public class TopUpLoad extends Fragment implements View.OnTouchListener, View.On
                         + referenceno + "&PartnerID="
                         + PartnerID + "";
 
-                //Log.d("URI", apiURL);
+                Log.d("URI", apiURL);
 
                 HttpGet httpGet = new HttpGet(apiURL);
                 HttpParams httpParameters = new BasicHttpParams();

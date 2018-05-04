@@ -1,4 +1,4 @@
-package com.budgetload.materialdesign.activity;
+package com.budgetload.materialdesign.Common;
 
 /**
  * Created by maryanncamarador on 10/20/15.

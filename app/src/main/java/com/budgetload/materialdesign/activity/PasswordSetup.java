@@ -1,15 +1,12 @@
 package com.budgetload.materialdesign.activity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -17,6 +14,7 @@ import android.widget.Toast;
 
 import com.budgetload.materialdesign.Common.CreateSession;
 import com.budgetload.materialdesign.Common.GlobalFunctions;
+import com.budgetload.materialdesign.Common.GlobalVariables;
 import com.budgetload.materialdesign.Common.progressDialog;
 import com.budgetload.materialdesign.Constant.Constant;
 import com.budgetload.materialdesign.DataBase.DataBaseHandler;
@@ -34,7 +32,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URLEncoder;
 
 public class PasswordSetup extends AppCompatActivity {
     String menuTitle = "SUBMIT";

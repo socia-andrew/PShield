@@ -1,4 +1,4 @@
-package com.budgetload.materialdesign.activity;
+package com.budgetload.materialdesign.activity.Fragments;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -22,14 +22,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.budgetload.materialdesign.ArrayList.NotificationList;
+import com.budgetload.materialdesign.model.NotificationList;
 import com.budgetload.materialdesign.DataBase.DataBaseHandler;
 import com.budgetload.materialdesign.R;
+import com.budgetload.materialdesign.activity.Notification_Details;
 import com.budgetload.materialdesign.adapter.NotificationAdapter;
 
 import java.util.ArrayList;
 
-public class Notifications extends Fragment {
+public class Fragment_Notifications extends Fragment {
 
     View rootView;
     ListView lvnotifications;
@@ -166,7 +167,7 @@ public class Notifications extends Fragment {
 //
 //                } else {
 //
-//                    fragment = new StockTransfer();
+//                    fragment = new FragmentStockTransfer();
 //                    fragment.setArguments(args);
 //
 //
@@ -222,7 +223,7 @@ public class Notifications extends Fragment {
 
                 } else {
 
-                    fragment = new StockTransfer();
+                    fragment = new FragmentStockTransfer();
                     fragment.setArguments(args);
 
 

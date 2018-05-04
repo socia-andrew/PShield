@@ -101,7 +101,7 @@ public class FetchWallet extends AsyncTask<String, Void, String> implements Cons
                     "&VersionCode=" + versionCode
                     + "&PartnerID=" + PartnerID + "";
 
-            // Log.d("URI", apiURL);
+            Log.d("URI", apiURL);
 
             HttpGet httpGet = new HttpGet(apiURL);
             HttpParams httpParameters = new BasicHttpParams();

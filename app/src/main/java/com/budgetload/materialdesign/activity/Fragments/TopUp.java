@@ -1,4 +1,4 @@
-package com.budgetload.materialdesign.fragment;
+package com.budgetload.materialdesign.activity.Fragments;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -12,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +30,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.budgetload.materialdesign.ArrayList.TopupList;
+import com.budgetload.materialdesign.model.TopupList;
 import com.budgetload.materialdesign.Common.CheckInternet;
 import com.budgetload.materialdesign.Common.CreateSession;
 import com.budgetload.materialdesign.Common.GlobalFunctions;
@@ -39,7 +40,7 @@ import com.budgetload.materialdesign.Constant.Constant;
 import com.budgetload.materialdesign.Constant.Indicators;
 import com.budgetload.materialdesign.DataBase.DataBaseHandler;
 import com.budgetload.materialdesign.R;
-import com.budgetload.materialdesign.activity.GlobalVariables;
+import com.budgetload.materialdesign.Common.GlobalVariables;
 import com.budgetload.materialdesign.adapter.TopupAdapter;
 
 import org.apache.http.HttpEntity;
@@ -74,6 +75,7 @@ public class TopUp extends Fragment implements Constant, SwipeRefreshLayout.OnRe
     TextView txtdatetime;
     TextView txtamount;
     TextView txtdescription;
+    TextView txtproductCode;
     TextView txtprebalance;
     TextView txtpostbalance;
     TextView txtdiscount;
@@ -151,11 +153,13 @@ public class TopUp extends Fragment implements Constant, SwipeRefreshLayout.OnRe
         txtmobile = (TextView) DetailsDialog.findViewById(R.id.mobilenoval);
         txtamount = (TextView) DetailsDialog.findViewById(R.id.amountval);
         txtdatetime = (TextView) DetailsDialog.findViewById(R.id.detailsdatehour);
-        txtdescription = (TextView) DetailsDialog.findViewById(R.id.descval);
+
+        txtdescription = (TextView) DetailsDialog.findViewById(R.id.productDesc);
         txtprebalance = (TextView) DetailsDialog.findViewById(R.id.prevbalval);
         txtpostbalance = (TextView) DetailsDialog.findViewById(R.id.postbalval);
         txtdiscount = (TextView) DetailsDialog.findViewById(R.id.discountval);
         myImage = (ImageView) DetailsDialog.findViewById(R.id.imageView1);
+        txtproductCode = (TextView) DetailsDialog.findViewById(R.id.productCode);
 
 
         emailDialog = new AlertDialog.Builder(getActivity());
@@ -366,13 +370,15 @@ public class TopUp extends Fragment implements Constant, SwipeRefreshLayout.OnRe
 
                         SessionID = rawdata[1];
 
+                        Log.d("Session", SessionID);
+
                         String network;
 
                         Cursor cursor = db.getNetwork(db);
                         while (cursor.moveToNext()) {
                             network = cursor.getString(cursor.getColumnIndex("Network"));
                             if (!network.equalsIgnoreCase("PREFIX")) {
-
+                                Log.d("Session", network);
                                 new fetchTransaction().execute(network);
                             }
                         }
@@ -512,6 +518,7 @@ public class TopUp extends Fragment implements Constant, SwipeRefreshLayout.OnRe
                     txtTxn.setText(mycursor.getString(mycursor.getColumnIndex("TxnNo")));
                     txtdatetime.setText(formatdate);
                     //txtdatetime.setText(mycursor.getString(mycursor.getColumnIndex("DateTimeIN")));
+                    txtproductCode.setText(mycursor.getString(mycursor.getColumnIndex("ProductCode")));
                     txtamount.setText(dec.format(Double.parseDouble(mycursor.getString(mycursor.getColumnIndex("Amount")))));
                     txtdescription.setText(mycursor.getString(mycursor.getColumnIndex("ProductDescription")));
                     txtprebalance.setText(dec.format(Double.parseDouble(mycursor.getString(mycursor.getColumnIndex("PrevBalance")))));
@@ -563,7 +570,7 @@ public class TopUp extends Fragment implements Constant, SwipeRefreshLayout.OnRe
 
             try {
                 JSONObject mJson = new JSONObject();
-                mJson.put("message_title", "More Transactions");
+                mJson.put("message_title", "More FragmentTransactions");
                 mJson.put("message", message);
                 mJson.put("sender", "BUDGETLOAD");
                 mJson.put("datesent", newdate);
@@ -643,7 +650,7 @@ public class TopUp extends Fragment implements Constant, SwipeRefreshLayout.OnRe
                 String apiURL = TXNHISTURL + "&IMEI=" + imei + "&SourceMobTel=" + mobile + "&SessionNo=" + SessionID + "&AuthCode=" + authcode + "&Network=" + brand + "&PartnerID=" + PartnerID + "";
 
 
-                // Log.d("URI", apiURL);
+                Log.d("URI", apiURL);
                 HttpGet httpGet = new HttpGet(apiURL);
                 HttpParams httpParameters = new BasicHttpParams();
                 int timeoutConnection = 60000;

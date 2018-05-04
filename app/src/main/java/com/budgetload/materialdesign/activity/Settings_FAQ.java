@@ -128,16 +128,16 @@ public class Settings_FAQ extends AppCompatActivity {
 
         //10
         child = new ArrayList<String>();
-        child.add("To keep track of the purchase of Credits, User can go to Transactions and press the Purchase tab. This is where all the purchases of the User is found. 10 transactions will only be displayed.");
+        child.add("To keep track of the purchase of Credits, User can go to FragmentTransactions and press the Purchase tab. This is where all the purchases of the User is found. 10 transactions will only be displayed.");
         childItems.add(child);
         //11
         child = new ArrayList<String>();
-        child.add("To know if the transaction is successful or not, go to Transactions and press the Top-Up Transaction tab. If the transaction is in the list of Top-Ups, then it is ​either ​successful​ or failed​ but if it's not in the list, then the transaction is ​​[either failed or​]​ still ​​​on ​process.​ 10​​ transactions will only be displayed​​.​");
+        child.add("To know if the transaction is successful or not, go to FragmentTransactions and press the Top-Up Transaction tab. If the transaction is in the list of Top-Ups, then it is ​either ​successful​ or failed​ but if it's not in the list, then the transaction is ​​[either failed or​]​ still ​​​on ​process.​ 10​​ transactions will only be displayed​​.​");
         childItems.add(child);
 
 
         child = new ArrayList<String>();
-        child.add("User can go to Transactions and press either Top-Up or Purchase tab. Click View More text found at the bottom of the list. Then an email containing a redirection link will be sent to the User's email address. By clicking the link, it will redirect to the report view of the transactions. This is only applicable for Users with verified email address.");
+        child.add("User can go to FragmentTransactions and press either Top-Up or Purchase tab. Click View More text found at the bottom of the list. Then an email containing a redirection link will be sent to the User's email address. By clicking the link, it will redirect to the report view of the transactions. This is only applicable for Users with verified email address.");
         childItems.add(child);
     }
 

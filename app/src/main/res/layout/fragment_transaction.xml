@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.budgetload.materialdesign.activity.Transactions"
+    tools:context="com.budgetload.materialdesign.activity.Fragments.FragmentTransactions"
     tools:showIn="@layout/fragment_transaction">
 
     <!--  android:padding="10dp"-->

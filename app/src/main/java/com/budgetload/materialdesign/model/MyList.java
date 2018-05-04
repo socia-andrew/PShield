@@ -1,4 +1,4 @@
-package com.budgetload.materialdesign.ArrayList;
+package com.budgetload.materialdesign.model;
 
 public class MyList {
 

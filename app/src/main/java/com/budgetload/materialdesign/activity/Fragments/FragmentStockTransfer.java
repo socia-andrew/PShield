@@ -1,4 +1,4 @@
-package com.budgetload.materialdesign.activity;
+package com.budgetload.materialdesign.activity.Fragments;
 
 import android.app.Activity;
 import android.content.Context;
@@ -41,6 +41,10 @@ import com.budgetload.materialdesign.Constant.Constant;
 import com.budgetload.materialdesign.Constant.Indicators;
 import com.budgetload.materialdesign.DataBase.DataBaseHandler;
 import com.budgetload.materialdesign.R;
+import com.budgetload.materialdesign.activity.CommunityList;
+import com.budgetload.materialdesign.activity.ContactList;
+import com.budgetload.materialdesign.Common.GlobalVariables;
+import com.budgetload.materialdesign.activity.TransferSuccess;
 import com.google.android.gms.ads.AdView;
 
 import org.apache.http.HttpEntity;
@@ -60,7 +64,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class StockTransfer extends Fragment implements View.OnClickListener, Constant {
+public class FragmentStockTransfer extends Fragment implements View.OnClickListener, Constant {
 
     //region INITIALIZATION
     EditText txtamount;
@@ -762,6 +766,7 @@ public class StockTransfer extends Fragment implements View.OnClickListener, Con
 
 
     class processCheckingComminity extends AsyncTask<Void, Void, String> {
+
         protected String getASCIIContentFromEntity(HttpEntity entity)
                 throws IllegalStateException, IOException {
             InputStream in = entity.getContent();
@@ -786,25 +791,20 @@ public class StockTransfer extends Fragment implements View.OnClickListener, Con
 
         @Override
         protected String doInBackground(Void... params) {
-
             String text;
-
             try {
                 String apiURL = OTHERSURL + "&CMD=RECEIVERCOMMUNITY&IMEI=" + imei + "&TargetMobile=" + targetmobile + "&PartnerID=" + PartnerID + "&SourceMobile=" + mobile + "";
-
-                //    Log.d("URI", apiURL);
+                    Log.d("URI", apiURL);
                 HttpGet httpGet = new HttpGet(apiURL);
                 HttpParams httpParameters = new BasicHttpParams();
                 int timeoutConnection = 60000;
                 HttpConnectionParams.setConnectionTimeout(httpParameters, timeoutConnection);
                 int timeoutSocket = 60000;
                 HttpConnectionParams.setSoTimeout(httpParameters, timeoutSocket);
-
                 DefaultHttpClient httpClient = new DefaultHttpClient(httpParameters);
                 HttpResponse response = httpClient.execute(httpGet);
                 HttpEntity entity = response.getEntity();
                 text = getASCIIContentFromEntity(entity);
-
             } catch (Exception e) {
                 text = null;
                 Log.d("Exception", e.toString());
@@ -903,7 +903,7 @@ public class StockTransfer extends Fragment implements View.OnClickListener, Con
                 String apiURL = STOCKTRANSFER + "&IMEI=" + imei + "&SourceMobTel=" + mobile + "&SessionNo=" + SessionID + "&AuthCode=" + authcode
                         + "&TargetMobTel=" + targetmobile + "&Amount=" + amount + "&PartnerID=" + PartnerID + "&TargetPartnerID=" + selectedCommID + "&Password=" + confimpass + "&PasswordStatus=" + PasswordStatus + "";
 
-                //Log.d("URI", apiURL);
+                Log.d("URI1", apiURL);
 
                 HttpGet httpGet = new HttpGet(apiURL);
                 HttpParams httpParameters = new BasicHttpParams();
@@ -982,12 +982,14 @@ public class StockTransfer extends Fragment implements View.OnClickListener, Con
 
 
                     } catch (JSONException e) {
+                        e.printStackTrace();
                         progressDialog.hideDialog();
                         Toast.makeText(getActivity(), " Failed to Connect Server. Please try again.", Toast.LENGTH_LONG).show();
                     }
 
                 }
             } catch (Exception e) {
+                e.printStackTrace();
                 progressDialog.hideDialog();
                 Toast.makeText(getActivity(), " Failed to Connect Server. Please try again.", Toast.LENGTH_LONG).show();
             }
@@ -1029,7 +1031,7 @@ public class StockTransfer extends Fragment implements View.OnClickListener, Con
                 String authcode = GlobalFunctions.getSha1Hex(imei + mobile + Constant.commitransfer + SessionID.toLowerCase());
                 String apiURL = COMMITSTOCKTRANSFER + "&IMEI=" + imei + "&SourceMobTel=" + mobile + "&SessionNo=" + SessionID + "&AuthCode=" + authcode + "&TargetMobTel=" + targetmobile + "&ReferenceNo=" + referenceno + "&PartnerID=" + PartnerID + "&TargetPartnerID=" + selectedCommID + "";
 
-                //Log.d("URI", apiURL);
+                Log.d("URI", apiURL);
                 HttpGet httpGet = new HttpGet(apiURL);
                 HttpParams httpParameters = new BasicHttpParams();
                 int timeoutConnection = 60000;

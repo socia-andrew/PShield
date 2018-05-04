@@ -28,6 +28,7 @@ import com.budgetload.materialdesign.Common.CheckInternet;
 import com.budgetload.materialdesign.Common.CreateSession;
 import com.budgetload.materialdesign.Common.DialogError;
 import com.budgetload.materialdesign.Common.GlobalFunctions;
+import com.budgetload.materialdesign.Common.GlobalVariables;
 import com.budgetload.materialdesign.Common.NetworkUtil;
 import com.budgetload.materialdesign.Common.commonFunctions;
 import com.budgetload.materialdesign.Common.logoutDialog;

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/windowBackground"
     android:orientation="vertical"
-    tools:context="com.budgetload.materialdesign.activity.StockTransfer">
+    tools:context="com.budgetload.materialdesign.activity.Fragments.FragmentStockTransfer">
 
 
     <TableRow

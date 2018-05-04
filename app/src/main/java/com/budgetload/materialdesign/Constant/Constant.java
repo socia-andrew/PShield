@@ -9,63 +9,91 @@ public interface Constant {
 
 
     //
-    public static String versionCode = "25";
+    public static String versionCode = "26";
     public static long TIME_OUT_IN_SECONDS = 120;
 
     //*******************
     //DEVELOPMENT
     //*******************
     // TODO: comment when deploying to production
-    public static String SESSIONURL = "http://dev2-session.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String PROFILEURL = "http://dev2-profile.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String VERIFYURL = "http://dev2-verify.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String REGISTERURL = "http://dev2-register.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String UPDATEURL = "http://dev2-update.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String LOADURL = "http://dev2-load.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String COMMITURL = "http://dev2-commit.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String TXNHISTURL = "http://dev2-txnhist.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String PURCHASEURL = "http://dev2-purchase.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String PRODUCTURL = "http://dev2-product.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String PRODUCTSYNCURL = "http://dev2-sync.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String BALANCEURL = "http://dev2-balance.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String PREFIXURL = "http://dev2-prefix.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String DEACTIVATE = "http://dev2-deactivate.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String NOTIFICATION = "http://dev2-notification.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String STOCKTRANSFER = "http://dev2-transfer.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String COMMITSTOCKTRANSFER = "http://dev2-committransfer.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String STOCKTRANSFERHISTORY = "http://dev2-transfertxnhist.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String OTHERSURL = "http://dev2-misc.mybudgetload.com:8282?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String PURCHASECOMMIT = "http://dev2-purchasecommit.mybudgetload.com:8282?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String PURCHASEREQUEST = "http://dev2-purchaserequest.mybudgetload.com:8282?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String ACKNOWLEDGEMENT = "http://dev2-acknowledgement.mybudgetload.com:8282?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-    public static String DRAGONPAY = "http://test.dragonpay.ph/Pay.aspx";
+//    public static String SESSIONURL = "http://dev2-session.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String PROFILEURL = "http://dev2-profile.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String VERIFYURL = "http://dev2-verify.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String REGISTERURL = "http://dev2-register.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String UPDATEURL = "http://dev2-update.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String LOADURL = "http://dev2-load.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String COMMITURL = "http://dev2-commit.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String TXNHISTURL = "http://dev2-txnhist.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String PURCHASEURL = "http://dev2-purchase.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String PRODUCTURL = "http://dev2-product.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String PRODUCTSYNCURL = "http://dev2-sync.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String BALANCEURL = "http://dev2-balance.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String PREFIXURL = "http://dev2-prefix.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String DEACTIVATE = "http://dev2-deactivate.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String NOTIFICATION = "http://dev2-notification.mybudgetload.com:8282/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String STOCKTRANSFER = "http://dev2-transfer.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String COMMITSTOCKTRANSFER = "http://dev2-committransfer.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String STOCKTRANSFERHISTORY = "http://dev2-transfertxnhist.mybudgetload.com:8080/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String OTHERSURL = "http://dev2-misc.mybudgetload.com:8080?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String PURCHASECOMMIT = "http://dev2-purchasecommit.mybudgetload.com:8080?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String PURCHASEREQUEST = "http://dev2-purchaserequest.mybudgetload.com:8080?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String ACKNOWLEDGEMENT = "http://dev2-acknowledgement.mybudgetload.com:8080?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String DRAGONPAY = "http://test.dragonpay.ph/Pay.aspx";
 
     //******************* 
     // PRODUCTION 
     // *******************
-    //TODO: uncomment when deploying to production
-//    public static String SESSIONURL = "https://session.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String PROFILEURL = "https://profile.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String VERIFYURL = "https://verify.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String REGISTERURL = "https://register.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String UPDATEURL = "https://update.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String LOADURL = "https://load.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String COMMITURL = "https://commit.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String TXNHISTURL = "https://txnhist.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String PURCHASEURL = "https://purchase.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String PRODUCTURL = "https://product.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String PRODUCTSYNCURL = "https://sync.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String BALANCEURL = "https://balance.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String PREFIXURL = "https://prefix.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String DEACTIVATE = "https://deactivate.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String NOTIFICATION = "https://notification.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String STOCKTRANSFER = "https://transfer.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String COMMITSTOCKTRANSFER = "https://committransfer.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String STOCKTRANSFERHISTORY = "https://transfertxnhist.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String OTHERSURL = "https://misc.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
-//    public static String PURCHASECOMMIT = "";
-//    public static String PURCHASEREQUEST = "https://purchaserequest.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String SESSIONURL = "https://session.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String PROFILEURL = "https://profile.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String VERIFYURL = "https://verify.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String REGISTERURL = "https://register.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String UPDATEURL = "https://update.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String LOADURL = "https://load.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String COMMITURL = "https://commit.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String TXNHISTURL = "https://txnhist.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String PURCHASEURL = "https://purchase.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String PRODUCTURL = "https://product.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String PRODUCTSYNCURL = "https://sync.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String BALANCEURL = "https://balance.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String PREFIXURL = "https://prefix.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String DEACTIVATE = "https://deactivate.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String NOTIFICATION = "https://notification.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String STOCKTRANSFER = "https://transfer.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String COMMITSTOCKTRANSFER = "https://committransfer.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String STOCKTRANSFERHISTORY = "https://transfertxnhist.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String OTHERSURL = "https://misc.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String PURCHASECOMMIT = "";
+    public static String PURCHASEREQUEST = "https://purchaserequest.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+    public static String DRAGONPAY = "https://gw.dragonpay.ph/Pay.aspx";
+
+
+    //************************
+    //PRE PRODUCTION
+    //************************
+//    public static String ACKNOWLEDGEMENT = "http://preprod-acknowledgement.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String BALANCEURL = "http://preprod-balance.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String COMMITURL = "http://preprod-commit.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String COMMITSTOCKTRANSFER = "http://preprod-committransfer.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String DEACTIVATE = "http://preprod-deactivate.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String LOADURL = "http://preprod-load.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String OTHERSURL = "http://preprod-misc.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String NOTIFICATION = "http://preprod-notification.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String PREFIXURL = "http://preprod-prefix.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String PRODUCTURL = "http://preprod-product.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String PROFILEURL = "http://preprod-profile.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String PURCHASEURL = "http://preprod-purchase.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String PURCHASECOMMIT = "http://preprod-purchasecommit.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String PURCHASEREQUEST = "http://preprod-purchaserequest.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String REGISTERURL = "http://preprod-register.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String SESSIONURL = "http://preprod-session.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String PRODUCTSYNCURL = "http://preprod-sync.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String STOCKTRANSFER = "http://preprod-transfer.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String STOCKTRANSFERHISTORY = "http://preprod-transfertxnhist.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String TXNHISTURL = "http://preprod-txnhist.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String UPDATEURL = "http://preprod-update.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
+//    public static String VERIFYURL = "http://preprod-verify.mybudgetload.com/?id=d6b27ee9de22e000700f0163e662ecba1d201c99";
 //    public static String DRAGONPAY = "https://gw.dragonpay.ph/Pay.aspx";
+
 
     String onlinebank = "[{\"Outlet\":\"BDO Online Banking via DragonPay\",\"Mode\":\"1\"},{\"Outlet\":\"BPI Express Online/Mobile via DragonPay\",\"Mode\":\"1\"},{\"Outlet\":\"BPI (via DragonPay)\",\"Mode\":\"2\"},{\"Outlet\":\"Chinabank (via Dragonpay)\",\"Mode\":\"2\"}]";
 //    String remittance = "[{\"Outlet\":\"Cebuana Lhuillier PeraPal  via DragonPay\",\"Mode\":\"CEBP\"},{\"Outlet\":\"LBC (via DragonPay)\",\"Mode\":\"LBC\"}]";

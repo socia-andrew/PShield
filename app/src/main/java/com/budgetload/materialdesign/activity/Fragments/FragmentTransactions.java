@@ -1,4 +1,4 @@
-package com.budgetload.materialdesign.activity;
+package com.budgetload.materialdesign.activity.Fragments;
 
 
 import android.os.Bundle;
@@ -12,14 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.budgetload.materialdesign.R;
-import com.budgetload.materialdesign.fragment.Purchase;
-import com.budgetload.materialdesign.fragment.TopUp;
-import com.budgetload.materialdesign.fragment.Transfer;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Transactions extends Fragment {
+public class FragmentTransactions extends Fragment {
 
 
     View rootView;

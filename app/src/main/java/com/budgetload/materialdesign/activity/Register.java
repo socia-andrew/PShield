@@ -29,6 +29,7 @@ import com.budgetload.materialdesign.Common.CheckInternet;
 import com.budgetload.materialdesign.Common.CreateSession;
 import com.budgetload.materialdesign.Common.DialogError;
 import com.budgetload.materialdesign.Common.GlobalFunctions;
+import com.budgetload.materialdesign.Common.GlobalVariables;
 import com.budgetload.materialdesign.Common.NetworkUtil;
 import com.budgetload.materialdesign.Common.commonFunctions;
 import com.budgetload.materialdesign.Common.progressDialog;
@@ -102,7 +103,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener,
         imei = getIMEI();
         GlobalVariables.imei = imei;
 
-        Toast.makeText(getBaseContext(), imei, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getBaseContext(), imei, Toast.LENGTH_SHORT).show();
 
         //getting partner from localdb
         PartnerID = db.getPartnerID(db);
@@ -514,13 +515,21 @@ public class Register extends AppCompatActivity implements View.OnClickListener,
                             startActivity(iinent);
                             finish();
                         }
+
+                    } else {
+
+
+
+                        if (resultCode.equals("1008")) {
+                            Toast.makeText(getBaseContext(), "You are already registered to ActiveLoad Community.", Toast.LENGTH_LONG).show();
+                        }
+
                         if (resultCode.equals("1006")) {
                             Toast.makeText(getBaseContext(), "Invalid mobile number.", Toast.LENGTH_LONG).show();
                         }
-                    } else {
                         //if (resultCode.equals("1007")) {
                         txtreferrer.setText("");
-                        Toast.makeText(getBaseContext(), articles.getString("Message"), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getBaseContext(), articles.getString("Message"), Toast.LENGTH_LONG).show();
                         //} else
                         //    Toast.makeText(getBaseContext(), "Failed to Connect Server. Please try again.", Toast.LENGTH_LONG).show();
                     }

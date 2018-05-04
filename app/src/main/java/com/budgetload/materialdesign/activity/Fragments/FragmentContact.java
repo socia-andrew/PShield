@@ -1,4 +1,4 @@
-package com.budgetload.materialdesign.activity;
+package com.budgetload.materialdesign.activity.Fragments;
 
 import android.app.Dialog;
 import android.content.ContentUris;
@@ -37,7 +37,7 @@ import android.widget.Toast;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
-import com.budgetload.materialdesign.ArrayList.MyList;
+import com.budgetload.materialdesign.model.MyList;
 import com.budgetload.materialdesign.Constant.PreloadedData;
 import com.budgetload.materialdesign.R;
 import com.budgetload.materialdesign.adapter.ContactListAdapter;
@@ -223,7 +223,7 @@ public class FragmentContact extends Fragment {
 
                 } else {
 
-                    fragment = new TopUpLoad();
+                    fragment = new FragmentTopUp();
                     fragment.setArguments(args);
 
 
@@ -269,7 +269,7 @@ public class FragmentContact extends Fragment {
 
                 } else {
 
-                    fragment = new StockTransfer();
+                    fragment = new FragmentStockTransfer();
                     fragment.setArguments(args);
 
 

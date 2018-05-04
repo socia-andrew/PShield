@@ -1,6 +1,6 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/activityColor"
@@ -8,183 +8,28 @@
     tools:context="com.budgetload.materialdesign.activity.HomeFragment">
 
 
-    <TableRow
-        android:id="@+id/tblrow1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:background="#CDD7EC">
-
-        <ImageView
-            android:id="@+id/walleticon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="0"
-            android:background="@drawable/wallet"
-            android:gravity="center"
-            android:padding="16dp" />
-
-        <TextView
-            android:id="@+id/txtMyWallet"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="right"
-            android:padding="@dimen/EdtPadding"
-            android:text="--.--"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/moneyColor"
-            android:textStyle="bold" />
-
-
-    </TableRow>
-
-    <TextView
-        android:id="@+id/textveiw1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp"
-        android:paddingTop="15dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingBottom="10dp"
-        android:text="Top-Up"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20dp"
-        android:textColor="@color/textColor" />
 
     <TextView
         android:id="@+id/txtLoad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <include
+        android:id="@+id/include3"
+        layout="@layout/layout_wallet"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textveiw1"
-        android:background="@drawable/textviewbg"
-        android:paddingTop="15dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingBottom="10dp"
-        android:text="Load"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/textColor"
-        android:textSize="16dp"
-        android:fontFamily="sans-serif-light"/>
+        android:layout_below="@+id/include3"
+        android:layout_margin="20dp">
+
+    </android.support.v7.widget.RecyclerView>
 
 
-    <TextView
-        android:id="@+id/txtother"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtLoad"
-        android:paddingTop="15dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingBottom="10dp"
-        android:text="Other Products"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20dp"
-        android:textColor="@color/textColor" />
-
-    <TextView
-        android:id="@+id/txtbillspayment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtother"
-        android:layout_marginTop="-2dp"
-        android:background="@drawable/textviewbg"
-        android:paddingTop="15dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingBottom="10dp"
-        android:text="Bills Payment"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/textColor"
-        android:textCursorDrawable="@null"
-        android:textSize="16dp"
-        android:fontFamily="sans-serif-light"/>
-
-
-    <TextView
-        android:id="@+id/txtPasagift"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtbillspayment"
-        android:background="@color/white"
-        android:paddingTop="15dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingBottom="10dp"
-        android:text="Pasagift"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/textColor"
-        android:textSize="16dp"
-        android:fontFamily="sans-serif-light"/>
-
-    <TextView
-        android:id="@+id/txtmedpadala"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtPasagift"
-        android:background="@drawable/textviewbg"
-        android:layout_marginTop="-2dp"
-        android:paddingTop="15dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingBottom="10dp"
-        android:text="MedPadala"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/textColor"
-        android:textSize="16dp"
-        android:fontFamily="sans-serif-light"/>
-
-    <TextView
-        android:id="@+id/txtpetron"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtmedpadala"
-        android:background="@color/white"
-        android:paddingTop="15dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingBottom="10dp"
-        android:text="Petron Gas Padala"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/textColor"
-        android:textSize="16dp"
-        android:fontFamily="sans-serif-light"/>
-
-
-
-</RelativeLayout>
+</LinearLayout>

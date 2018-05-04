@@ -21,7 +21,7 @@ import android.widget.TextView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
-import com.budgetload.materialdesign.ArrayList.MyList;
+import com.budgetload.materialdesign.model.MyList;
 import com.budgetload.materialdesign.R;
 
 import java.io.ByteArrayInputStream;

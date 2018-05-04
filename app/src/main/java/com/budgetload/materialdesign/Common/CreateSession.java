@@ -21,7 +21,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 
-import static com.budgetload.materialdesign.activity.GlobalVariables.imei;
+import static com.budgetload.materialdesign.Common.GlobalVariables.imei;
 
 /**
  * Created by andrewlaurienrsocia on 11/12/15.
@@ -71,7 +71,7 @@ public class CreateSession extends AsyncTask<String, Void, String> implements Co
 
             String apiURL = SESSIONURL + "&IMEI=" + imei.toLowerCase() + "&AuthCode=" + authcode + "&PartnerID=" + PartnerID + "";
 
-            // Log.d("URI", apiURL);
+            Log.d("URI", apiURL);
 
             HttpGet httpGet = new HttpGet(apiURL);
             HttpParams httpParameters = new BasicHttpParams();

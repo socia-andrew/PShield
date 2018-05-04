@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.budgetload.materialdesign.ArrayList.PaymentModel;
+import com.budgetload.materialdesign.model.PaymentModel;
 import com.budgetload.materialdesign.Constant.Constant;
 import com.budgetload.materialdesign.R;
 import com.budgetload.materialdesign.adapter.OutletAdapter;

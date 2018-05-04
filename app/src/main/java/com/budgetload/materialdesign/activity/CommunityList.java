@@ -72,12 +72,6 @@ public class CommunityList extends AppCompatActivity {
 
             JSONObject myobj;
 
-//            HashMap<String, String> commu1 = new HashMap<String, String>();
-//            commu1.put("COMID", "REMITBOX");
-//            commu1.put("COMNAME", "No Community");
-
-            // comList.add(commu1);
-
 
             for (int i = 0; i < array.length(); i++) {
                 commu = new HashMap<String, String>();

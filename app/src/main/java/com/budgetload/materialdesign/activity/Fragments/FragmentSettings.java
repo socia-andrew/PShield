@@ -1,4 +1,4 @@
-package com.budgetload.materialdesign.activity;
+package com.budgetload.materialdesign.activity.Fragments;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -12,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.IntentCompat;
 import android.support.v7.app.AlertDialog;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +31,13 @@ import com.budgetload.materialdesign.Common.progressDialog;
 import com.budgetload.materialdesign.Constant.Constant;
 import com.budgetload.materialdesign.DataBase.DataBaseHandler;
 import com.budgetload.materialdesign.R;
+import com.budgetload.materialdesign.activity.Community;
+import com.budgetload.materialdesign.Common.GlobalVariables;
+import com.budgetload.materialdesign.activity.SettingPassword;
+import com.budgetload.materialdesign.activity.SettingsAbout;
+import com.budgetload.materialdesign.activity.SettingsFileTicket;
+import com.budgetload.materialdesign.activity.SettingsProfile;
+import com.budgetload.materialdesign.activity.Settings_FAQ;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -44,7 +52,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class BudgetLoadSettings extends Fragment implements View.OnClickListener, Constant {
+public class FragmentSettings extends Fragment implements View.OnClickListener, Constant {
 
     //region INITIALIZATION
     View rootView;
@@ -335,7 +343,7 @@ public class BudgetLoadSettings extends Fragment implements View.OnClickListener
             }
         });
 
-       // alertDialog.show();
+        // alertDialog.show();
 
         AlertDialog alert11 = alertDialog.create();
         alert11.show();
@@ -443,7 +451,7 @@ public class BudgetLoadSettings extends Fragment implements View.OnClickListener
             HttpContext localContext = new BasicHttpContext();
             HttpGet httpGet = new HttpGet(url);
 
-            //  Log.d("URI", url);
+            Log.d("URI", url);
 
             String text = null;
 

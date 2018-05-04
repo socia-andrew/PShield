@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.budgetload.materialdesign.ArrayList.PurchaseList;
+import com.budgetload.materialdesign.model.PurchaseList;
 import com.budgetload.materialdesign.R;
 import java.sql.Date;
 import java.text.DecimalFormat;

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.budgetload.materialdesign.ArrayList.TransferList;
+import com.budgetload.materialdesign.model.TransferList;
 import com.budgetload.materialdesign.R;
 
 import java.text.DecimalFormat;

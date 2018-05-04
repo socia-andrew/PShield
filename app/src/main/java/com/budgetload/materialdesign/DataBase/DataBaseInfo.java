@@ -30,9 +30,9 @@ public class DataBaseInfo {
         public static final String Purchases = "Purchases";
         public static final String Notifications = "Notifcations";
         public static final String Community = "Community";
-        public static final String CommunityList  = "CommunityList";
+        public static final String CommunityList = "CommunityList";
         public static final String PasswordSetUp = "Password";
-
+        public static final String AllowedNumbers = "AllowedNumbers";
 
 
         //Fields
@@ -63,6 +63,8 @@ public class DataBaseInfo {
 
         public static final String Prefix = "Prefix";
         public static final String Brand = "Brand";
+        public static final String Min = "Min";
+        public static final String Max = "Max";
 
 
         public static final String NetworkID = "NetworkID";
@@ -120,7 +122,6 @@ public class DataBaseInfo {
         public static final String DateSent = "DateSent";
 
 
-
         //Extra Fields
 
         public static final String Exta1 = "Extra1";
@@ -131,14 +132,13 @@ public class DataBaseInfo {
         public static final String Notes2 = "Notes2";
 
         //updates for password
-        public static final String PasswordStatus="PasswordStatus";
-        public static final String Password="Password";
+        public static final String PasswordStatus = "PasswordStatus";
+        public static final String Password = "Password";
 
         //update additional fields for stock transfer
         public static final String SenderCommunity = "SenderCommunity";
         public static final String ReceiverCommunity = "ReceiverCommunity";
         public static final String ReceiverName = "ReceiverName";
-
 
 
     }

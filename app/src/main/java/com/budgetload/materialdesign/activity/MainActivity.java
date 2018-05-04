@@ -3,10 +3,12 @@ package com.budgetload.materialdesign.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -25,6 +27,7 @@ import com.amulyakhare.textdrawable.TextDrawable;
 import com.budgetload.materialdesign.Common.CheckInternet;
 import com.budgetload.materialdesign.Common.CreateSession;
 import com.budgetload.materialdesign.Common.GlobalFunctions;
+import com.budgetload.materialdesign.Common.GlobalVariables;
 import com.budgetload.materialdesign.Common.NetworkUtil;
 import com.budgetload.materialdesign.Common.logoutDialog;
 import com.budgetload.materialdesign.Constant.Constant;
@@ -32,7 +35,13 @@ import com.budgetload.materialdesign.Constant.Indicators;
 import com.budgetload.materialdesign.Constant.PreloadedData;
 import com.budgetload.materialdesign.DataBase.DataBaseHandler;
 import com.budgetload.materialdesign.R;
-import com.budgetload.materialdesign.adapter.NavigationDrawerAdapter;
+import com.budgetload.materialdesign.activity.Fragments.FragmentContact;
+import com.budgetload.materialdesign.activity.Fragments.FragmentCredits;
+import com.budgetload.materialdesign.activity.Fragments.FragmentSettings;
+import com.budgetload.materialdesign.activity.Fragments.FragmentStockTransfer;
+import com.budgetload.materialdesign.activity.Fragments.FragmentTopUp;
+import com.budgetload.materialdesign.activity.Fragments.FragmentTransactions;
+import com.budgetload.materialdesign.activity.Fragments.Fragment_Notifications;
 import com.budgetload.materialdesign.model.User;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
@@ -58,7 +67,7 @@ import java.io.InputStream;
 import static com.budgetload.materialdesign.R.id.adView;
 
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener,
-        Constant, TopUpLoad.GoToTransactions, StockTransfer.GoToTransactions {
+        Constant, FragmentTopUp.GoToTransactions, FragmentStockTransfer.GoToTransactions {
 
     //Declaring objects and variables
     //get the name for profile
@@ -162,6 +171,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
         //initializing database
         db = new DataBaseHandler(this);
+        db.getReadableDatabase();
         mcontext = this;
 
         walletoff = R.drawable.walletsmalloff;
@@ -190,7 +200,16 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         //This should be in database
         //query here but execute in start state
 
-        preLoadData();
+
+        Bundle b = new Bundle();
+
+        b = getIntent().getExtras();
+
+
+        if (b != null)
+            if (!b.getString("ReturnHero").equalsIgnoreCase("No")) {
+                preLoadData();
+            }
 
 
         //get the profile
@@ -256,24 +275,34 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     //************************
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 5) {
-            Fragment fragment = null;
-            fragment = new TopUpLoad();
-            title = "Sell Load";
-            if (fragment != null) {
-                NavigationDrawerAdapter.mSelectedPosition = 1;
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.container_body, fragment);
-                fragmentTransaction.commit();
-            }
-            // set the toolbar title
-            getSupportActionBar().setTitle(title);
-        }
+        Fragment fragment;
 
+        // Toast.makeText(getBaseContext(), "" + requestCode, Toast.LENGTH_SHORT).show();
+
+        //if (requestCode == 65537) {
+//        fragment = (Fragment) getSupportFragmentManager().findFragmentById(R.id.container_body);
+//        if (fragment != null) {
+//            fragment.onActivityResult(requestCode, resultCode, data);
+//        }
+//        }
+
+//        if (requestCode == 5) {
+//
+//            fragment = new FragmentTopUp();
+//            title = "Sell Load";
+//            FragmentManager fragmentManager = getSupportFragmentManager();
+//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//            fragmentTransaction.replace(R.id.container_body, fragment);
+//            fragmentTransaction.commit();
+//
+//        }
+
+
+        // set the toolbar title
+        getSupportActionBar().setTitle(title);
     }
 
     @Override
@@ -308,19 +337,19 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             title = getString(R.string.app_name);
             switch (position) {
                 case 0:
-                    fragment = new Notifications();
+                    fragment = new Fragment_Notifications();
                     title = "Notifications";
                     break;
                 case 1:
-                    fragment = new TopUpLoad();
+                    fragment = new FragmentTopUp();
                     title = "Sell Load";
                     break;
                 case 2:
-                    fragment = new StockTransfer();
+                    fragment = new FragmentStockTransfer();
                     title = "Transfer Credits";
                     break;
                 case 3:
-                    fragment = new BuyCredits();
+                    fragment = new FragmentCredits();
                     title = "Buy Credits";
                     break;
                 case 4:
@@ -328,11 +357,11 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                     title = "Contacts";
                     break;
                 case 5:
-                    fragment = new Transactions();
+                    fragment = new FragmentTransactions();
                     title = "Transactions";
                     break;
                 case 6:
-                    fragment = new BudgetLoadSettings();
+                    fragment = new FragmentSettings();
                     title = "Settings";
                     break;
                 case 7:
@@ -626,7 +655,9 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     //FUNCTIONS
     public void preLoadData() {
 
+
         try {
+
             Cursor sunc = db.getProduct(db, "SUN");
             Cursor globec = db.getProduct(db, "GLOBE");
             Cursor smartc = db.getProduct(db, "SMART");
@@ -636,11 +667,28 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 db.DeletePrefix(db);
                 db.saveNetPrefix(db, prefixarry);
             }
-            if (sunc.getCount() == 0 || globec.getCount() == 0 || smartc.getCount() == 0) {
-                JSONArray globearry = new JSONArray(PreloadedData.globestr);
-                JSONArray sunarry = new JSONArray(PreloadedData.sunstr);
-                JSONArray smartarry = new JSONArray(PreloadedData.smartstr);
-                JSONArray productsigarry = new JSONArray(PreloadedData.productsignature);
+
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = preferences.edit();
+
+            JSONArray globearry = new JSONArray(PreloadedData.globestr);
+            JSONArray sunarry = new JSONArray(PreloadedData.sunstr);
+            JSONArray smartarry = new JSONArray(PreloadedData.smartstr);
+            JSONArray productsigarry = new JSONArray(PreloadedData.productsignature);
+            JSONArray alloweNumber = new JSONArray(PreloadedData.allowedNumber);
+
+
+            if (!preferences.contains("AllowedNumbers")) {
+                for (int i = 0; i < alloweNumber.length(); i++) {
+                    Log.d("Save", "here");
+                    db.saveAllowedNumber(db, alloweNumber.getJSONObject(i));
+                }
+                editor.putString("AllowedNumbers", "Yes");
+                editor.apply();
+            }
+
+
+            if (!preferences.contains("IsSmarProductUpdated2")) {
                 db.deleteProdCode(db);
                 db.saveSunProductCode(db, sunarry, PartnerID);
                 db.saveGlobeProductCode(db, globearry, PartnerID);
@@ -651,8 +699,31 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                     String signature = obj.getString("Signature");
                     db.saveSignature(db, network, signature);
                 }
+                editor.putString("IsSmarProductUpdated2", "Yes");
+                editor.apply();
+            } else {
+
+
+                if (sunc.getCount() == 0 || smartc.getCount() == 0) {
+
+                    db.deleteProdCode(db);
+                    db.saveSunProductCode(db, sunarry, PartnerID);
+                    //db.saveGlobeProductCode(db, globearry, PartnerID);
+                    db.saveSmartProductCode(db, smartarry, PartnerID);
+                    for (int i = 0; i < productsigarry.length(); i++) {
+                        JSONObject obj = productsigarry.getJSONObject(i);
+                        String network = obj.getString("Network");
+                        String signature = obj.getString("Signature");
+                        db.saveSignature(db, network, signature);
+                    }
+
+
+                }
+
             }
+
         } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }

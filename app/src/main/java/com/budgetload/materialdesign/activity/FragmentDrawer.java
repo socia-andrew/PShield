@@ -74,7 +74,7 @@ public class FragmentDrawer extends Fragment {
             navItem.setTitle(titles[i]);
             navItem.setIcon(myImageList[i]);
 
-            if (titles[i].equalsIgnoreCase("Notifications")) {
+            if (titles[i].equalsIgnoreCase("Fragment_Notifications")) {
                 navItem.setShowNotify(true);
             } else {
                 navItem.setShowNotify(false);

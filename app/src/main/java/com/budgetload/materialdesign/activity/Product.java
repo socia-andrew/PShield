@@ -104,6 +104,7 @@ public class Product extends AppCompatActivity {
                 returnIntent.putExtra("ProductAmount", prodAmount);
                 returnIntent.putExtra("ProductDiscount", prodDiscount);
                 setResult(Activity.RESULT_OK, returnIntent);
+
                 finish();
 
 
@@ -143,7 +144,7 @@ public class Product extends AppCompatActivity {
     public void showProduct() {
 
 
-       // Toast.makeText(getBaseContext(),brand,Toast.LENGTH_LONG).show();
+        // Toast.makeText(getBaseContext(),brand,Toast.LENGTH_LONG).show();
 
         Cursor mycursor = db.getProduct(db, brand);
 

@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.budgetload.materialdesign.Constant.Constant;
-import com.budgetload.materialdesign.activity.GlobalVariables;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -157,6 +156,8 @@ public class SendNotification extends AsyncTask<String, Void, String> implements
 //            text = getASCIIContentFromEntity(entity);
 
             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+            Log.d("URI", ""+httppost);
 
             // Execute HTTP Post Request
             HttpResponse response = httpclient.execute(httppost);

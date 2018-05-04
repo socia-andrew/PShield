@@ -1,4 +1,4 @@
-package com.budgetload.materialdesign.ArrayList;
+package com.budgetload.materialdesign.model;
 
 /**
  * Created by andrewlaurienrsocia on 11/27/15.

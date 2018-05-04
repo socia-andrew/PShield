@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.budgetload.materialdesign.ArrayList.PaymentModel;
+import com.budgetload.materialdesign.model.PaymentModel;
 import com.budgetload.materialdesign.R;
 
 import java.util.ArrayList;

@@ -44,9 +44,9 @@ import java.net.URLEncoder;
 import java.text.DecimalFormat;
 
 import static com.budgetload.materialdesign.R.id.txtpuramount;
-import static com.budgetload.materialdesign.activity.GlobalVariables.PartnerID;
-import static com.budgetload.materialdesign.activity.GlobalVariables.SessionID;
-import static com.budgetload.materialdesign.activity.GlobalVariables.imei;
+import static com.budgetload.materialdesign.Common.GlobalVariables.PartnerID;
+import static com.budgetload.materialdesign.Common.GlobalVariables.SessionID;
+import static com.budgetload.materialdesign.Common.GlobalVariables.imei;
 
 public class creditsConfirmation extends AppCompatActivity implements Constant {
 

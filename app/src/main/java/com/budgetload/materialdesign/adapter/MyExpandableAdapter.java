@@ -26,9 +26,7 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
     public MyExpandableAdapter(ArrayList<String> parents, ArrayList<Object> childern) {
 
         this.parentItems = parents;
-
         this.childtems = childern;
-
     }
 
 

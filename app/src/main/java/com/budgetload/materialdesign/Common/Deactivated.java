@@ -15,7 +15,7 @@ import com.budgetload.materialdesign.activity.MainActivity;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import static com.budgetload.materialdesign.R.id.groupcode;
-import static com.budgetload.materialdesign.activity.GlobalVariables.imei;
+import static com.budgetload.materialdesign.Common.GlobalVariables.imei;
 
 public class Deactivated {
 

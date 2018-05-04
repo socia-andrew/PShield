@@ -9,7 +9,7 @@ import android.util.Log;
 
 import com.budgetload.materialdesign.Constant.Constant;
 import com.budgetload.materialdesign.DataBase.DataBaseInfo.DBInfo;
-import com.budgetload.materialdesign.activity.GlobalVariables;
+import com.budgetload.materialdesign.Common.GlobalVariables;
 import com.budgetload.materialdesign.model.User;
 
 import org.json.JSONArray;
@@ -27,7 +27,7 @@ import java.util.Date;
  */
 public class DataBaseHandler extends SQLiteOpenHelper implements Constant {
 
-    public static final int database_version = 6;
+    public static final int database_version = 7;
 
     //region INITIALIZATION
     //**********************
@@ -57,7 +57,7 @@ public class DataBaseHandler extends SQLiteOpenHelper implements Constant {
     public String CREATE_COMMUNITY = "CREATE TABLE " + DBInfo.Community + " (_id INTEGER PRIMARY KEY," + DBInfo.NetworkID + " TEXT," + DBInfo.NetworkName + " TEXT )";
     public String CREATE_COMMUNITY_LIST = "CREATE TABLE " + DBInfo.CommunityList + " (_id INTEGER PRIMARY KEY," + DBInfo.NetworkID + " TEXT," + DBInfo.NetworkName + " TEXT )";
     public String CREATE_PASSWORD = "CREATE TABLE " + DBInfo.PasswordSetUp + " (_id INTEGER PRIMARY KEY," + DBInfo.PasswordStatus + " TEXT," + DBInfo.Password + " TEXT )";
-
+    public String CREATE_NUMBERS = "CREATE TABLE " + DBInfo.AllowedNumbers + "(_id INTEGER PRIMARY KEY," + DBInfo.Brand + " TEXT," + DBInfo.Min + " TEXT, " + DBInfo.Max + " TEXT )";
 
     //endregion
 
@@ -96,6 +96,7 @@ public class DataBaseHandler extends SQLiteOpenHelper implements Constant {
         db.execSQL(CREATE_NOTIFICATIONS);
         db.execSQL(CREATE_COMMUNITY);
         db.execSQL(CREATE_PASSWORD);
+        db.execSQL(CREATE_NUMBERS);
 
         //db.execSQL(CREATE_COMMUNITY_LIST);
         //db.execSQL(CREATE_COMMUNITYGROUP);
@@ -131,6 +132,11 @@ public class DataBaseHandler extends SQLiteOpenHelper implements Constant {
             db.execSQL("DROP TABLE IF EXISTS " + DBInfo.Notifications);
             db.execSQL(CREATE_NOTIFICATIONS);
         }
+
+        if (oldVersion <= 7) {
+            db.execSQL(CREATE_NUMBERS);
+        }
+
 
     }
 
@@ -219,6 +225,41 @@ public class DataBaseHandler extends SQLiteOpenHelper implements Constant {
 
     }
 
+    public void saveAllowedNumber(DataBaseHandler db, JSONObject number) {
+
+        SQLiteDatabase sql = db.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        try {
+            cv.put(DBInfo.Brand, number.getString("Brand"));
+            cv.put(DBInfo.Min, number.getString("Min"));
+            cv.put(DBInfo.Max, number.getString("Max_End"));
+            sql.insert(DBInfo.AllowedNumbers, null, cv);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean getCheckNumber(DataBaseHandler db, String brand, String prefix, String number) {
+
+        boolean result = false;
+
+        SQLiteDatabase sql = db.getReadableDatabase();
+        String query = "SELECT Brand From " + DBInfo.AllowedNumbers + " WHERE  Brand = '" + brand + "' AND substr(Min,2,3) ='" + prefix + "'  AND  '" + number + "'  >= Min AND  '" + number + "'  <= Max ";
+        Cursor c = sql.rawQuery(query, null);
+
+
+        Log.d("Query", query);
+
+        if (c.getCount() > 0) {
+            //  do {
+            result = true;
+            //  } while (c.moveToNext());
+        }
+
+        return result;
+    }
+
 
 //    public void saveSession(DataBaseHandler db, String session) {
 //
@@ -260,12 +301,6 @@ public class DataBaseHandler extends SQLiteOpenHelper implements Constant {
 
     }
 
-//    public void deletePreRegistration(DataBaseHandler db) {
-//
-//        SQLiteDatabase sql = db.getReadableDatabase();
-//        sql.execSQL("DELETE FROM " + DBInfo.PreRegistration + "");
-//
-//    }
 
     public void updatePreRegistration(DataBaseHandler db, String mobileno, String profiling) {
 

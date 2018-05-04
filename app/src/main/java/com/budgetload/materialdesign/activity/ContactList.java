@@ -16,7 +16,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.budgetload.materialdesign.ArrayList.MyList;
+import com.budgetload.materialdesign.model.MyList;
 import com.budgetload.materialdesign.Common.HideKeyboard;
 import com.budgetload.materialdesign.Constant.PreloadedData;
 import com.budgetload.materialdesign.R;

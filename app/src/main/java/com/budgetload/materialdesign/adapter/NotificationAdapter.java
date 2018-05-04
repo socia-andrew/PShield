@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
-import com.budgetload.materialdesign.ArrayList.NotificationList;
+import com.budgetload.materialdesign.model.NotificationList;
 import com.budgetload.materialdesign.R;
 
 import java.text.DecimalFormat;

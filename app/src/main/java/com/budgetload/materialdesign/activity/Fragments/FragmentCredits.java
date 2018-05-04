@@ -1,4 +1,4 @@
-package com.budgetload.materialdesign.activity;
+package com.budgetload.materialdesign.activity.Fragments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.budgetload.materialdesign.ArrayList.PaymentModel;
+import com.budgetload.materialdesign.model.PaymentModel;
 import com.budgetload.materialdesign.Common.Deactivated;
 import com.budgetload.materialdesign.Common.FetchWallet;
 import com.budgetload.materialdesign.Common.RequestCredits;
@@ -24,6 +24,8 @@ import com.budgetload.materialdesign.Constant.Constant;
 import com.budgetload.materialdesign.Constant.Indicators;
 import com.budgetload.materialdesign.DataBase.DataBaseHandler;
 import com.budgetload.materialdesign.R;
+import com.budgetload.materialdesign.activity.MainActivity;
+import com.budgetload.materialdesign.activity.creditsAmount;
 import com.budgetload.materialdesign.adapter.PaymentMethodAdapter;
 
 import org.json.JSONArray;
@@ -33,11 +35,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import static com.budgetload.materialdesign.R.id.txtMyWallet;
-import static com.budgetload.materialdesign.activity.GlobalVariables.PartnerID;
-import static com.budgetload.materialdesign.activity.GlobalVariables.SessionID;
-import static com.budgetload.materialdesign.activity.GlobalVariables.imei;
+import static com.budgetload.materialdesign.Common.GlobalVariables.PartnerID;
+import static com.budgetload.materialdesign.Common.GlobalVariables.SessionID;
+import static com.budgetload.materialdesign.Common.GlobalVariables.imei;
 
-public class BuyCredits extends Fragment implements Constant {
+public class FragmentCredits extends Fragment implements Constant {
 
 
     //region INITIALIZATION

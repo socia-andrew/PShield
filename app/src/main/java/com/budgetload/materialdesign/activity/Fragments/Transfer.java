@@ -1,4 +1,4 @@
-package com.budgetload.materialdesign.fragment;
+package com.budgetload.materialdesign.activity.Fragments;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -29,7 +29,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.budgetload.materialdesign.ArrayList.TransferList;
+import com.budgetload.materialdesign.model.TransferList;
 import com.budgetload.materialdesign.Common.CheckInternet;
 import com.budgetload.materialdesign.Common.CreateSession;
 import com.budgetload.materialdesign.Common.GlobalFunctions;
@@ -39,7 +39,7 @@ import com.budgetload.materialdesign.Constant.Constant;
 import com.budgetload.materialdesign.Constant.Indicators;
 import com.budgetload.materialdesign.DataBase.DataBaseHandler;
 import com.budgetload.materialdesign.R;
-import com.budgetload.materialdesign.activity.GlobalVariables;
+import com.budgetload.materialdesign.Common.GlobalVariables;
 import com.budgetload.materialdesign.adapter.TransferAdapter;
 
 import org.apache.http.HttpEntity;
@@ -487,7 +487,7 @@ public class Transfer extends Fragment implements Constant, SwipeRefreshLayout.O
 
             try {
                 JSONObject mJson = new JSONObject();
-                mJson.put("message_title", "More Transactions");
+                mJson.put("message_title", "More FragmentTransactions");
                 mJson.put("message", message);
                 mJson.put("sender", "BUDGETLOAD");
                 mJson.put("datesent", newdate);

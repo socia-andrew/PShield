@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.budgetload.materialdesign.ArrayList.TopupList;
+import com.budgetload.materialdesign.model.TopupList;
 import com.budgetload.materialdesign.R;
 
 import java.text.DecimalFormat;

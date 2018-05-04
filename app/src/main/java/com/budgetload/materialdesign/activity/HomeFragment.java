@@ -23,6 +23,7 @@ import com.budgetload.materialdesign.Common.NetworkUtil;
 import com.budgetload.materialdesign.Common.progressDialog;
 import com.budgetload.materialdesign.DataBase.DataBaseHandler;
 import com.budgetload.materialdesign.R;
+import com.budgetload.materialdesign.activity.Fragments.FragmentTopUp;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
@@ -90,7 +91,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.txtLoad:
 
                 txtLoad.setEnabled(false);
-                Intent intent = new Intent(getActivity(), TopUpLoad.class);
+                Intent intent = new Intent(getActivity(), FragmentTopUp.class);
                 startActivityForResult(intent, 1);
                 break;
 
