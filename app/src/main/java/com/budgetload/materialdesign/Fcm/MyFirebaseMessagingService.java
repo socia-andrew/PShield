@@ -104,17 +104,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
             PendingIntent pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
             builder.setContentIntent(pendingIntent);
-            builder.setAutoCancel(true);
 
             NotificationManager mNotificationManager =
                     (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
             mNotificationManager.notify(0, builder.build());
 
-//            SimpleDateFormat format = new SimpleDateFormat("hh:mma");
-//            Calendar c = Calendar.getInstance();
-//            String date = new DateFormatSymbols().getMonths()[c.get(Calendar.MONTH)] + " " +
-//                    c.get(Calendar.DAY_OF_MONTH) + ", " + c.get(Calendar.YEAR) + " " + format.format(new Date());
             String requestormobile = "";
             String title = message.getString("message_title");
             String messagecontent = message.getString("message");
@@ -126,23 +121,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 requestormobile = message.getString("rmobile");
             }
 
-            //  Log.d("DataHere", title + ":" + json + ":" + sender + ":" + datesent);
 
             db.saveNotification(db, URLDecoder.decode(title), URLDecoder.decode(messagecontent), URLDecoder.decode(sender), URLDecoder.decode(datesent), status, requestormobile);
 
-            //Log.d("date", date);
-            // LoginActivity.db.insertNotification(new Notification(message.getString("message_title").substring(0,1),
-            //         message.getString("message_title"), message.getString("message"), date));
 
-            // LoginActivity.fromNotification = true;
         } catch (JSONException e) {
             //Log.e("JSONERROR", e.getMessage() + " " + remoteMessage.getData().toString());
             Log.e("JSONERROR", e.getMessage());
         }
-//        } else {
-//            Log.d("FirebaseMessage", "App is closed");
-//        }
-//        //Log.d("FirebaseMessage", "Notification Message Body: " + remoteMessage.getNotification().getBody());
     }
 
 

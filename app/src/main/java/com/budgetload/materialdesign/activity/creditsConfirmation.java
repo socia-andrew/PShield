@@ -117,45 +117,6 @@ public class creditsConfirmation extends AppCompatActivity implements Constant {
 
         txttotalamount.setText("" + formatter.format(totalamount));
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//
-//                int status = NetworkUtil.getConnectivityStatusString(mcontext);
-//                if (status == 0) {
-//                    CheckInternet.showConnectionDialog(mcontext);
-//                    progressDialog.hideDialog();
-//                } else {
-//                    if (MainActivity.user != null) {
-//                        if (commonFunctions.isEmailValid(MainActivity.user.email)) {
-//                            progressDialog.showDialog(mcontext, "Purchase Credits", "Processing request.Please wait...", false);
-//                            CreateSession newsession = new CreateSession(creditsConfirmation.this);
-//                            newsession.setQueryListener(new CreateSession.QueryListener() {
-//                                @SuppressWarnings("unchecked")
-//                                public void QuerySuccessFul(String data) {
-//                                    String[] rawdata = data.split(";");
-//                                    if (rawdata[0].equals("Success")) {
-//                                        SessionID = rawdata[1];
-//                                        new purchaseRequest().execute();
-//                                        //new fetchAPIDetails().execute();
-//                                    } else {
-//                                        Toast.makeText(mcontext, "Failed to Connect Server. Please try again.", Toast.LENGTH_LONG).show();
-//                                        progressDialog.hideDialog();
-//                                    }
-//                                }
-//                            });
-//                            newsession.execute(PartnerID);
-//                        } else {
-//                            Toast.makeText(mcontext, "Please update your email to continue.", Toast.LENGTH_LONG).show();
-//                        }
-//                    } else {
-//                        Toast.makeText(mcontext, "Fetching profile info please wait.", Toast.LENGTH_LONG).show();
-//                    }
-//                }
-//            }
-//        });
         btnPurchase = (Button) findViewById(R.id.btnPurchase);
         btnPurchase.setOnClickListener(new View.OnClickListener() {
 

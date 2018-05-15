@@ -70,53 +70,6 @@ public class creditsAmount extends AppCompatActivity {
         txtFee.setText(bundle.getString("Rate"));
         txtPaymentMethod.setText(gateway);
 
-//        if (gateway.equalsIgnoreCase("onlinebank")) {
-//            gateway = "Online Banking";
-//        }
-//        //gateway + " - " +
-//        //txtPaymentMethod.setText(gateway);
-//        if (gateway.equalsIgnoreCase("remittance")) txtPaymentMethod.setText(outletname);
-//        else txtPaymentMethod.setText(gateway);
-//        //region Inline Triggers
-
-        //txtPurchaseAmount.addTextChangedListener(new NumberTextWatcher(txtPurchaseAmount));
-
-//        txtPurchaseAmount.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//            }
-//
-//            private String current = "";
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//                if (s.length() > 0) {
-//                    if (Integer.parseInt(txtPurchaseAmount.getText().toString()) != 0) {
-//                        switch (MainActivity.paymentType) {
-//                            case "OnlineBanking":
-//                                txtFee.setText("10.00");
-//                                break;
-//                            case "OTCBanking":
-//                                txtFee.setText("15.00");
-//                                break;
-//                            case "OTCNonbank":
-//                                txtFee.setText("20.00");
-//                                break;
-//                            default:
-//                                txtFee.setText("20.00");
-//                                break;
-//                        }
-//                        //txtFee.setText("20.00");
-//                    }
-//                } else {
-//                    txtFee.setText("0.00");
-//                }
-//            }
-//        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
