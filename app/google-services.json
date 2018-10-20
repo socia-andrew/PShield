@@ -1,20 +1,27 @@
 {
   "project_info": {
-    "project_number": "984420843597",
-    "project_id": "budgetload-community"
+    "project_number": "912129978963",
+    "firebase_url": "https://proshield-4768e.firebaseio.com",
+    "project_id": "proshield-4768e",
+    "storage_bucket": "proshield-4768e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:984420843597:android:19aac830f3de9c2f",
+        "mobilesdk_app_id": "1:912129978963:android:03b99ff2137aaf50",
         "android_client_info": {
-          "package_name": "com.epayvenue.budgetload"
+          "package_name": "com.gte.proshield"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "912129978963-d6b4biqn3nr8hh7l7egt48g35kl2fbd0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyCjVR4fT31EUTiy3gqdRnOSCYmzrHIgycM"
+          "current_key": "AIzaSyArNPAdi2fsrhmZw_ICiPQvy5vXtLSmqRU"
         }
       ],
       "services": {
@@ -26,7 +33,7 @@
           "other_platform_oauth_client": []
         },
         "ads_service": {
-          "status": 1
+          "status": 2
         }
       }
     }

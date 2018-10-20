@@ -48,9 +48,14 @@ public class FragmentDrawer extends Fragment {
     RelativeLayout myRow = null;
     private SparseBooleanArray selectedItems;
 
-    private static int[] myImageList = new int[]{R.drawable.notificationsicon, R.drawable.topup,
-            R.drawable.transfer, R.drawable.ic_purchasecredits, R.drawable.profile, R.drawable.transactions,
+    private static int[] myImageList = new int[]{
+            R.drawable.notificationsicon,
+            R.drawable.topup,
+//           R.drawable.profile,
             R.drawable.settings};
+
+    //R.drawable.topup, R.drawable.transactions,
+    // R.drawable.transfer,  R.drawable.ic_purchasecredits,
 
     //, R.drawable.chaticon R.drawable.ic_purchasecredits,
 

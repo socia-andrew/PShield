@@ -1,11 +1,12 @@
 <resources>
-    <string name="app_name">My BudgetLoad</string>
+    <string name="app_name">ProShield</string>
     <string name="action_settings">Settings</string>
     <string name="action_search">Search</string>
 
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
+    <string name="nav_item_home">Home</string>
     <string name="nav_item_nofif">Notifications</string>
     <string name="nav_item_topup">Sell Load</string>
     <string name="nav_item_stocktransfer">Transfer Credits</string>
@@ -17,12 +18,14 @@
     <string name="nav_item_helpcenter">Help Center</string>
     <!-- navigation drawer item labels  -->
     <string-array name="nav_drawer_labels">
+
         <item>@string/nav_item_nofif</item>
-        <item>@string/nav_item_topup</item>
-        <item>@string/nav_item_stocktransfer</item>
-        <item>@string/nav_item_credits</item>
-        <item>@string/nav_item_contacts</item>
-        <item>@string/nav_item_transactions</item>
+        <item>@string/nav_item_home</item>
+        <!--<item>@string/nav_item_topup</item>-->
+        <!--<item>@string/nav_item_stocktransfer</item>-->
+        <!--<item>@string/nav_item_credits</item>-->
+        <!--<item>@string/nav_item_contacts</item>-->
+        <!--<item>@string/nav_item_transactions</item>-->
         <item>@string/nav_item_settings</item>
         <!--<item>@string/nav_item_helpcenter</item>-->
         <!--  <item>@string/nav_item_helpcenter</item>-->
@@ -118,5 +121,8 @@
 
 
     <string name="facebook_app_id">1835864966700643</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

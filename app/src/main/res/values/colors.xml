@@ -38,6 +38,8 @@
 
     <color name="listcolor">#2B60D0</color>
     <color name="lightgrey">#dddddd</color>
+    <color name="colorWalletBG">#073491</color>
+    <color name="colorWalletLabel">#1B9ACF</color>
 
 
 </resources>

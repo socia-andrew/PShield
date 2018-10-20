@@ -6,12 +6,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -26,8 +22,6 @@ import com.budgetload.materialdesign.DataBase.DataBaseHandler;
 import com.budgetload.materialdesign.R;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
-
-import java.io.File;
 
 public class Registration_Spash extends AppCompatActivity implements View.OnClickListener {
 
@@ -145,36 +139,36 @@ public class Registration_Spash extends AppCompatActivity implements View.OnClic
         super.onStart();
 
 
-        if (!regcommunity.equals("") && !regcommunity.equalsIgnoreCase("remitbox")) {
-
-            File imgFile = new File(Environment.getExternalStorageDirectory()
-                    + "/Android/data/"
-                    + getApplicationContext().getPackageName()
-                    + "/Files/Community/" + regcommunity.toLowerCase() + ".png");
-
-            if (imgFile.exists()) {
-                Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-
-                imgCommunity.setImageBitmap(myBitmap);
-                bgLayout.setBackgroundColor(Color.WHITE);
-                txtterms.setTextColor(Color.parseColor("#2B60D0"));
-                poweredby.setVisibility(View.VISIBLE);
-
-            } else {
-
-                String uri = "@drawable/" + regcommunity.toLowerCase();
-                int drawableCommunity = getResources().getIdentifier(uri, null, getPackageName());
-                imgCommunity.setImageResource(drawableCommunity);
-                bgLayout.setBackgroundColor(Color.WHITE);
-                txtterms.setTextColor(Color.parseColor("#2B60D0"));
-                poweredby.setVisibility(View.VISIBLE);
-
-            }
-
-        } else {
-
-            poweredby.setVisibility(View.GONE);
-        }
+//        if (!regcommunity.equals("") && !regcommunity.equalsIgnoreCase("remitbox")) {
+//
+//            File imgFile = new File(Environment.getExternalStorageDirectory()
+//                    + "/Android/data/"
+//                    + getApplicationContext().getPackageName()
+//                    + "/Files/Community/" + regcommunity.toLowerCase() + ".png");
+//
+//            if (imgFile.exists()) {
+//                Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+//
+//                imgCommunity.setImageBitmap(myBitmap);
+//                bgLayout.setBackgroundColor(Color.WHITE);
+//                txtterms.setTextColor(Color.parseColor("#2B60D0"));
+//                poweredby.setVisibility(View.VISIBLE);
+//
+//            } else {
+//
+//                String uri = "@drawable/" + regcommunity.toLowerCase();
+//                int drawableCommunity = getResources().getIdentifier(uri, null, getPackageName());
+//                imgCommunity.setImageResource(drawableCommunity);
+//                bgLayout.setBackgroundColor(Color.WHITE);
+//                txtterms.setTextColor(Color.parseColor("#2B60D0"));
+//                poweredby.setVisibility(View.VISIBLE);
+//
+//            }
+//
+//        } else {
+//
+//            poweredby.setVisibility(View.GONE);
+//        }
 
         checkStatus();
 

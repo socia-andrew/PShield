@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
             android:gravity="center"
-            android:text="A referrer is the one who invites you to join Budgetload. \n Input mobile number of your referrer below."
+            android:text="A referrer is the one who invites you to join ProShield. \n Input mobile number of your referrer below."
             android:textColor="@color/white"
             android:textSize="18dp" />
 

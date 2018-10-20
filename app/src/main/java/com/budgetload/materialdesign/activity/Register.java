@@ -17,6 +17,7 @@ import android.text.Html;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
@@ -284,7 +285,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener,
 
         //region Fetch Referrer
 
-        if (PartnerID.equalsIgnoreCase("remitbox")) {
+        //if (PartnerID.equalsIgnoreCase("remitbox")) {
 
             CreateSession newsession = new CreateSession(Register.this);
             newsession.setQueryListener(new CreateSession.QueryListener() {
@@ -299,7 +300,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener,
 
             });
             newsession.execute(PartnerID);
-        }
+        //}
 
         //endregion
 
@@ -323,6 +324,20 @@ public class Register extends AppCompatActivity implements View.OnClickListener,
     //TRIGGERS
     //******************
 
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case android.R.id.home:
+//
+//                finish();
+//                return true;
+//
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//    }
+
+
 
     @Override
     public void onClick(View v) {
@@ -343,7 +358,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener,
                 if (!myresult) { //meaning result from checking is incorrect
                     btnRegister.setEnabled(true);
                     mystatus = false;
-                    DialogError.alertDialogShow(this, "BudgetLoad",
+                    DialogError.alertDialogShow(this, getResources().getString(R.string.app_name),
                             "Please provide a correct mobile number.");
                 }
                 //check referrer
@@ -357,7 +372,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener,
                     if (referrer == null || referrer.equalsIgnoreCase("")) {
                         btnRegister.setEnabled(true);
                         mystatus = false;
-                        DialogError.alertDialogShow(this, "BudgetLoad",
+                        DialogError.alertDialogShow(this, getResources().getString(R.string.app_name),
                                 "Please provide a correct referrer number.");
                     }
                 }
@@ -371,15 +386,15 @@ public class Register extends AppCompatActivity implements View.OnClickListener,
 
                         if (txtMobile.getText().length() < 10) {
                             btnRegister.setEnabled(true);
-                            DialogError.alertDialogShow(this, "BudgetLoad",
+                            DialogError.alertDialogShow(this, getResources().getString(R.string.app_name),
                                     "Invalid Mobile Number.");
                         } else {
 
 
                             if (PartnerID.equalsIgnoreCase("gcsync")) {
-                                txtmessage.setText("Are you sure you want to register your mobile number " + Html.fromHtml("0" + mobile) + "  to BudgetLoad?");
+                                txtmessage.setText("Are you sure you want to register your mobile number " + Html.fromHtml("0" + mobile) + "  to ProShield?");
                             } else {
-                                txtmessage.setText("Are you sure you want to register your mobile number " + Html.fromHtml("0" + mobile) + " and referrer as " + Html.fromHtml(referrer) + " to BudgetLoad?");
+                                txtmessage.setText("Are you sure you want to register your mobile number " + Html.fromHtml("0" + mobile) + " and referrer as " + Html.fromHtml(referrer) + " to ProShield?");
                             }
 
                             confimation.show();
@@ -528,7 +543,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener,
                             Toast.makeText(getBaseContext(), "Invalid mobile number.", Toast.LENGTH_LONG).show();
                         }
                         //if (resultCode.equals("1007")) {
-                        txtreferrer.setText("");
+                        //txtreferrer.setText("");
                         //Toast.makeText(getBaseContext(), articles.getString("Message"), Toast.LENGTH_LONG).show();
                         //} else
                         //    Toast.makeText(getBaseContext(), "Failed to Connect Server. Please try again.", Toast.LENGTH_LONG).show();

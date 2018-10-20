@@ -1,17 +1,21 @@
 package com.budgetload.materialdesign.activity;
 
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -35,19 +39,11 @@ import com.budgetload.materialdesign.Constant.Indicators;
 import com.budgetload.materialdesign.Constant.PreloadedData;
 import com.budgetload.materialdesign.DataBase.DataBaseHandler;
 import com.budgetload.materialdesign.R;
-import com.budgetload.materialdesign.activity.Fragments.FragmentContact;
-import com.budgetload.materialdesign.activity.Fragments.FragmentCredits;
 import com.budgetload.materialdesign.activity.Fragments.FragmentSettings;
-import com.budgetload.materialdesign.activity.Fragments.FragmentStockTransfer;
-import com.budgetload.materialdesign.activity.Fragments.FragmentTopUp;
-import com.budgetload.materialdesign.activity.Fragments.FragmentTransactions;
 import com.budgetload.materialdesign.activity.Fragments.Fragment_Notifications;
+import com.budgetload.materialdesign.activity.Fragments.MainFragment;
 import com.budgetload.materialdesign.model.User;
-import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.apache.http.HttpEntity;
@@ -64,26 +60,26 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 
-import static com.budgetload.materialdesign.R.id.adView;
-
+//FragmentTopUp.GoToTransactions,
+//,  FragmentStockTransfer.GoToTransactions
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener,
-        Constant, FragmentTopUp.GoToTransactions, FragmentStockTransfer.GoToTransactions {
+        Constant {
 
     //Declaring objects and variables
     //get the name for profile
 
     //initializing database
-    DataBaseHandler db;
+    public static DataBaseHandler db;
     private Toolbar mToolbar;
     private FragmentDrawer drawerFragment;
-    String imei;
+    public static String imei;
     public static String regmobile;
     Context mcontext;
     String globesignature, NPGlobe;
     String sunsignature, NPSun;
     String smartsignature, NPSmart;
     String prefixsignature, NPPrefix;
-    String SessionID;
+    public static String SessionID;
     public static String PartnerID;
     TextView txtmobile;
     ImageView myimage;
@@ -99,54 +95,15 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     public static int walletoff;
     public static int walleton;
 
+    public static String rebateBalance, rewardBalance, walletBalance = "0";
+
+    private static final int REQUEST_READ_PHONE_STATE = 101;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        FacebookSdk.sdkInitialize(getApplicationContext());
-
-        MobileAds.initialize(getApplicationContext(), "ca-app-pub-3409059871597746/9512184914");
-        // MobileAds.initialize(getApplicationContext(), "ca-app-pub-3409059871597746/3435298516");
-
-        AdView mAdView = (AdView) findViewById(adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-
-//        mAdView.setAdListener(new AdListener() {
-//            private void showToast(String message) {
-//
-//                //Toast.makeText(mcontext, message, Toast.LENGTH_SHORT).show();
-//
-//            }
-//
-//            @Override
-//            public void onAdLoaded() {
-//                showToast("Ad loaded.");
-//            }
-//
-//            @Override
-//            public void onAdFailedToLoad(int errorCode) {
-//                showToast(String.format("Ad failed to load with error code %d.", errorCode));
-//            }
-//
-//            @Override
-//            public void onAdOpened() {
-//                showToast("Ad opened.");
-//            }
-//
-//            @Override
-//            public void onAdClosed() {
-//                showToast("Ad closed.");
-//            }
-//
-//            @Override
-//            public void onAdLeftApplication() {
-//                showToast("Ad left application.");
-//            }
-//        });
-        mAdView.loadAd(adRequest);
 
 
         Intent startingIntent = this.getIntent();
@@ -159,15 +116,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         //remove auto fucos
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-//        if (getIntent().getExtras() != null) {
-//            for (String key : getIntent().getExtras().keySet()) {
-//                Object value = getIntent().getExtras().get(key);
-//                Log.d("MainActivity", "Key: " + key + " Value: " + value);
-//            }
-//        }
-
-        // String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-        // Log.d("Data", "Refreshed token: " + refreshedToken);
 
         //initializing database
         db = new DataBaseHandler(this);
@@ -178,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         walleton = R.drawable.wallet;
 
         //get IMEI
-        imei = getIMEI();
+        checkIMEIPermission();
         GlobalVariables.imei = imei;
 
         //Get partner ID
@@ -194,12 +142,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             } while (cursor.moveToNext());
         }
 
-        //check if new registered or first app, setting up products,prefix and signature (PRELOAD value)
-
-
-        //This should be in database
-        //query here but execute in start state
-
 
         Bundle b = new Bundle();
 
@@ -207,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
 
         if (b != null)
-            if (!b.getString("ReturnHero").equalsIgnoreCase("No")) {
+            if (!b.getString("ReturnHero").equalsIgnoreCase("No") || b.getString("ReturnHero") != null) {
                 preLoadData();
             }
 
@@ -242,30 +184,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             displayView(1);
         }
 
-//
-//        JSONObject obj = new JSONObject();
-//        try {
-//            obj.put("topic", "mytopic");
-//
-//        } catch (JSONException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
-//
-//        JSONObject student2 = new JSONObject();
-//        try {
-//            student2.put("data", "2");
-//            student2.put("name", "NAME OF STUDENT2");
-//            student2.put("year", "4rd");
-//            student2.put("curriculum", "scicence");
-//            student2.put("birthday", "5/5/1993");
-//
-//        } catch (JSONException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
-
-
     }
 
 
@@ -277,28 +195,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-        Fragment fragment;
-
-        // Toast.makeText(getBaseContext(), "" + requestCode, Toast.LENGTH_SHORT).show();
-
-        //if (requestCode == 65537) {
-//        fragment = (Fragment) getSupportFragmentManager().findFragmentById(R.id.container_body);
-//        if (fragment != null) {
-//            fragment.onActivityResult(requestCode, resultCode, data);
-//        }
-//        }
-
-//        if (requestCode == 5) {
-//
-//            fragment = new FragmentTopUp();
-//            title = "Sell Load";
-//            FragmentManager fragmentManager = getSupportFragmentManager();
-//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//            fragmentTransaction.replace(R.id.container_body, fragment);
-//            fragmentTransaction.commit();
-//
-//        }
 
 
         // set the toolbar title
@@ -341,40 +237,54 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                     title = "Notifications";
                     break;
                 case 1:
-                    fragment = new FragmentTopUp();
-                    title = "Sell Load";
+
+                    fragment = new MainFragment();
+                    title = "Home";
                     break;
                 case 2:
-                    fragment = new FragmentStockTransfer();
-                    title = "Transfer Credits";
-                    break;
-                case 3:
-                    fragment = new FragmentCredits();
-                    title = "Buy Credits";
-                    break;
-                case 4:
-                    fragment = new FragmentContact();
-                    title = "Contacts";
-                    break;
-                case 5:
-                    fragment = new FragmentTransactions();
-                    title = "Transactions";
-                    break;
-                case 6:
+
                     fragment = new FragmentSettings();
                     title = "Settings";
                     break;
-                case 7:
-                    title = "Help Center";
-                    // create an intent
-                    //Intent i = new Intent(this, com.hipmob.android.HipmobCore.class);
-                    // REQUIRED: set the appid to the key you're provided
-                    //i.putExtra(HipmobCore.KEY_APPID, "b7987df80c184656877a8bae7e5e4bfe");
-                    // REQUIRED: pass the host user identifier.
-                    //i.putExtra(HipmobCore.KEY_USERID, imei);
-                    // launch the chat window
-                    //startActivityForResult(i, 5);
-                    break;
+//                case 3:
+//                    fragment = new FragmentSettings();
+//                    title = "Settings";
+//                    break;
+//                case 1:
+//                    fragment = new FragmentTopUp();
+//                    title = "Sell Load";
+//                    break;
+//                case 2:
+//                    fragment = new FragmentStockTransfer();
+//                    title = "Transfer Credits";
+//                    break;
+//                case 3:
+//                    fragment = new FragmentCredits();
+//                    title = "Buy Credits";
+//                    break;
+//                case 4:
+//                    fragment = new FragmentContact();
+//                    title = "Contacts";
+//                    break;
+//                case 5:
+//                    fragment = new FragmentTransactions();
+//                    title = "Transactions";
+//                    break;
+//                case 6:
+//                    fragment = new FragmentSettings();
+//                    title = "Settings";
+//                    break;
+//                case 7:
+//                    title = "Help Center";
+                // create an intent
+                //Intent i = new Intent(this, com.hipmob.android.HipmobCore.class);
+                // REQUIRED: set the appid to the key you're provided
+                //i.putExtra(HipmobCore.KEY_APPID, "b7987df80c184656877a8bae7e5e4bfe");
+                // REQUIRED: pass the host user identifier.
+                //i.putExtra(HipmobCore.KEY_USERID, imei);
+                // launch the chat window
+                //startActivityForResult(i, 5);
+                //break;
                 default:
                     break;
             }
@@ -458,17 +368,51 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     public String getIMEI() {
 
-        TelephonyManager telephonyManager = (TelephonyManager) this
-                .getSystemService(Context.TELEPHONY_SERVICE);
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+            TelephonyManager telephonyManager = (TelephonyManager) this
+                    .getSystemService(Context.TELEPHONY_SERVICE);
+            return telephonyManager.getDeviceId();
+        } else {
+            checkIMEIPermission();
+        }
 
-        return telephonyManager.getDeviceId();
+        return null;
+    }
+
+    public void checkIMEIPermission() {
+        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
+
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE}, REQUEST_READ_PHONE_STATE);
+        } else {
+            //TODO
+            //getting the IMEI
+            imei = getIMEI();
+        }
 
     }
 
     @Override
-    public void theMethod() {
-        displayView(5);
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_READ_PHONE_STATE:
+                if ((grantResults.length > 0) && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                    checkIMEIPermission();
+                } else {
+                    checkIMEIPermission();
+                }
+                break;
+
+            default:
+                break;
+        }
     }
+
+
+//    @Override
+//    public void theMethod() {
+//        displayView(5);
+//    }
 
     public void initializedNavProfile() {
         Cursor mycursor = db.getProfile(db);
@@ -653,6 +597,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     //region PRELOADEDDATA
     //FUNCTIONS
+
+
     public void preLoadData() {
 
 
@@ -727,6 +673,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         }
 
     }
+
 
     //endregion
 

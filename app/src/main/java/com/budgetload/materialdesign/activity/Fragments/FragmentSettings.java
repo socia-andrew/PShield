@@ -9,7 +9,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.IntentCompat;
 import android.support.v7.app.AlertDialog;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -25,6 +24,7 @@ import com.budgetload.materialdesign.Common.CheckInternet;
 import com.budgetload.materialdesign.Common.CreateSession;
 import com.budgetload.materialdesign.Common.FetchWallet;
 import com.budgetload.materialdesign.Common.GlobalFunctions;
+import com.budgetload.materialdesign.Common.GlobalVariables;
 import com.budgetload.materialdesign.Common.NetworkUtil;
 import com.budgetload.materialdesign.Common.RequestCredits;
 import com.budgetload.materialdesign.Common.progressDialog;
@@ -32,7 +32,6 @@ import com.budgetload.materialdesign.Constant.Constant;
 import com.budgetload.materialdesign.DataBase.DataBaseHandler;
 import com.budgetload.materialdesign.R;
 import com.budgetload.materialdesign.activity.Community;
-import com.budgetload.materialdesign.Common.GlobalVariables;
 import com.budgetload.materialdesign.activity.SettingPassword;
 import com.budgetload.materialdesign.activity.SettingsAbout;
 import com.budgetload.materialdesign.activity.SettingsFileTicket;
@@ -491,7 +490,7 @@ public class FragmentSettings extends Fragment implements View.OnClickListener, 
                         db.DropAllTable(db);
 
                         Intent intent = new Intent(getActivity(), Community.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
 
                     } else {

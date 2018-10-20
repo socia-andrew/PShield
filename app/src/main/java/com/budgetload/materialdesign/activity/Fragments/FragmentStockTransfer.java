@@ -561,7 +561,8 @@ public class FragmentStockTransfer extends Fragment implements View.OnClickListe
             community.setVisibility(View.GONE);
             fab.setVisibility(View.GONE);
             if (resultCode == 3) {
-                callTransaction.theMethod();
+                //callTransaction.theMethod();
+                getActivity().finish();
                 Fragment fragment = getActivity().getSupportFragmentManager().findFragmentById(R.id.stocktransfer);
             }
         }
@@ -665,16 +666,16 @@ public class FragmentStockTransfer extends Fragment implements View.OnClickListe
 
     }
 
-    private GoToTransactions callTransaction;
+//    private GoToTransactions callTransaction;
+//
+//    public void onAttach(Activity activity) {
+//        callTransaction = (GoToTransactions) activity;
+//        super.onAttach(activity);
+//    }
 
-    public void onAttach(Activity activity) {
-        callTransaction = (GoToTransactions) activity;
-        super.onAttach(activity);
-    }
-
-    public interface GoToTransactions {
-        void theMethod();
-    }
+//    public interface GoToTransactions {
+//        void theMethod();
+//    }
 
     public void walleticonstat(Integer val) {
 

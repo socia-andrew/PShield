@@ -118,6 +118,7 @@ public class FetchWallet extends AsyncTask<String, Void, String> implements Cons
 
         } catch (Exception e) {
             text = null;
+            e.printStackTrace();
             Log.d("Exception", "HERE" + e.toString());
 
         }
@@ -151,21 +152,23 @@ public class FetchWallet extends AsyncTask<String, Void, String> implements Cons
                             String credit = articles.getString("Credits");
                             String debit = articles.getString("Debits");
                             String balance = articles.getString("Balance");
+                            String rebates = articles.getString("Rebates");
+                            String rewards = articles.getString("Rewards");
                             String msgstatus = articles.getString("MessagingStatus");
                             String VersionCode = articles.getString("VersionCode");
                             db.saveNewWallet(db, credit, debit, balance);
                             MainActivity.walletvalue = balance;
-                            myListener.QuerySuccessFul("Success" + ";" + balance + ";" + msgstatus + ";" + VersionCode);
+                            myListener.QuerySuccessFul("Success" + ";" + balance + ";" + msgstatus + ";" + VersionCode + ";" + rewards + ";" + rebates);
                         } else {
-                            myListener.QuerySuccessFul("Failed" + ";FAILED" + ";FAILED" + ";FAILED");
+                            myListener.QuerySuccessFul("Failed" + ";FAILED" + ";FAILED" + ";FAILED" + ";FAILED" + ";FAILED");
                         }
                     }
 
                 } catch (JSONException e) {
-                    myListener.QuerySuccessFul("Failed" + ";FAILED" + ";FAILED" + ";FAILED");
+                    myListener.QuerySuccessFul("Failed" + ";FAILED" + ";FAILED" + ";FAILED" + ";FAILED" + ";FAILED");
                 }
             } else {
-                myListener.QuerySuccessFul("Failed" + ";FAILED" + ";FAILED" + ";FAILED");
+                myListener.QuerySuccessFul("Failed" + ";FAILED" + ";FAILED" + ";FAILED" + ";FAILED" + ";FAILED");
             }
         } catch (Exception e) {
         }

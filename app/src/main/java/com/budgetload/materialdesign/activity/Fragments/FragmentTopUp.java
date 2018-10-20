@@ -561,7 +561,8 @@ public class FragmentTopUp extends Fragment implements View.OnTouchListener, Vie
                 @Override
                 public void onClick(View v) {
                     dialog.cancel();
-                    callTransaction.theMethod();
+                    getActivity().finish();
+                    //callTransaction.theMethod();
                 }
             });
 
@@ -759,7 +760,8 @@ public class FragmentTopUp extends Fragment implements View.OnTouchListener, Vie
 
 
                 if (resultCode == 4) {
-                    callTransaction.theMethod();
+                    //callTransaction.theMethod();
+                    getActivity().finish();
                 }
 
             }
@@ -1137,16 +1139,16 @@ public class FragmentTopUp extends Fragment implements View.OnTouchListener, Vie
 
     }
 
-    private GoToTransactions callTransaction;
+//    private GoToTransactions callTransaction;
 
-    public void onAttach(Activity activity) {
-        callTransaction = (GoToTransactions) activity;
-        super.onAttach(activity);
-    }
+//    public void onAttach(Activity activity) {
+//        callTransaction = (GoToTransactions) activity;
+//        super.onAttach(activity);
+//    }
 
-    public interface GoToTransactions {
-        void theMethod();
-    }
+//    public interface GoToTransactions {
+//        void theMethod();
+//    }
 
 
     //endregion

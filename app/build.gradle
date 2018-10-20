@@ -5,9 +5,9 @@ android {
     buildToolsVersion '27.0.3'
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
-        applicationId 'com.epayvenue.budgetload'
+        applicationId 'com.gte.proshield'
         minSdkVersion 15
-        targetSdkVersion 19
+        targetSdkVersion 26
         versionCode 71
         versionName "1.71"
         multiDexEnabled true
@@ -39,7 +39,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    //implementation 'com.android.support:appcompat-v7:26.0.0-alpha1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.+'
     implementation 'com.android.support:design:26.0.0-alpha1'
     implementation 'com.android.support:support-v4:26.0.0-alpha1'
@@ -59,10 +59,7 @@ dependencies {
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.3-alpha', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
-
 }
 
 
 apply plugin: 'com.google.gms.google-services'
-

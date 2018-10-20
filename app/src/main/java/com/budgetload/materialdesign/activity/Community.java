@@ -1,14 +1,17 @@
 package com.budgetload.materialdesign.activity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.telephony.TelephonyManager;
@@ -61,6 +64,7 @@ public class Community extends AppCompatActivity implements Constant {
     JSONArray commlist;
     private loadCommunityImage mTask;
 
+    private static final int REQUEST_READ_PHONE_STATE = 101;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,8 +76,8 @@ public class Community extends AppCompatActivity implements Constant {
         mcontext = this;
         db = new DataBaseHandler(this); //initializing database
 
-        //getting the IMEI
-        imei = getIMEI();
+        checkIMEIPermission();
+
         GlobalVariables.imei = imei;
         //fetch community
         new fetchCommunity().execute();
@@ -107,7 +111,7 @@ public class Community extends AppCompatActivity implements Constant {
                     Bundle b = new Bundle();
                     b.putString("CommunityID", selectedCommID);
                     b.putString("CommunityName", selectedCommName);
-                    GlobalFunctions.fbLogger(Community.this, "Selecting A Community", b,1);
+                    GlobalFunctions.fbLogger(Community.this, "Selecting A Community", b, 1);
 
                     //proceed to registering mobile(open new activity)
                     Intent iinent = new Intent(mcontext, Register.class);
@@ -146,11 +150,40 @@ public class Community extends AppCompatActivity implements Constant {
 
     }
 
+    public void checkIMEIPermission() {
+        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
+
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE}, REQUEST_READ_PHONE_STATE);
+        } else {
+            //TODO
+            //getting the IMEI
+            imei = getIMEI();
+        }
+
+    }
+
 
     //region TRIGGERS
     //************************
     //TRIGGERS
     //************************
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_READ_PHONE_STATE:
+                if ((grantResults.length > 0) && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                    checkIMEIPermission();
+                } else {
+                    checkIMEIPermission();
+                }
+                break;
+
+            default:
+                break;
+        }
+    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -178,9 +211,15 @@ public class Community extends AppCompatActivity implements Constant {
     //************************
 
     public String getIMEI() {
-        TelephonyManager telephonyManager = (TelephonyManager) this
-                .getSystemService(Context.TELEPHONY_SERVICE);
-        return telephonyManager.getDeviceId();
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+            TelephonyManager telephonyManager = (TelephonyManager) this
+                    .getSystemService(Context.TELEPHONY_SERVICE);
+            return telephonyManager.getDeviceId();
+        } else {
+            checkIMEIPermission();
+        }
+        return null;
     }
 
 
